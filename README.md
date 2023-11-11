@@ -41,18 +41,18 @@ In a world where the act of reading typically unfolds in solitude, [BookClub, Re
 It targets a mature audience (+18) that are  book enthusiasts, avid readers, students, and anyone who enjoys reading and wants to maintain an organized reading list. It caters to individuals who want to keep track of their reading progress, explore new books, and share recommendations with fellow book lovers. 
 
 - **Identify the various pages your application will have and describe what users will be able to accomplish:**<br>
-      **1. Log-in page/home page:** The description of the website, the creators, and some statistics such as numbers of clubs, and fandom 
+   **1. Log-in page/home page:** The description of the website, the creators, and some statistics such as numbers of clubs, and fandom 
 
-      **2. Feed page:**  Users can stay in the loop with the latest updates from clubs and fandoms they are subscribed to. Additionally, they'll enjoy a curated feed of their friends' publications.
+   **2. Feed page:**  Users can stay in the loop with the latest updates from clubs and fandoms they are subscribed to. Additionally, they'll enjoy a curated feed of their friends' publications.
 
-      **3. Profile:** Users can empower their reading journey by creating and managing their profile by tracking their reading statistics, setting and achieving reading goals, and take charge by creating new fandoms or book clubs.
+   **3. Profile:** Users can empower their reading journey by creating and managing their profile by tracking their reading statistics, setting and achieving reading goals, and take charge by creating new fandoms or book clubs.
 
-      **4. Search page:** It helps the user to discover a world of literature with distinct features. <br>
+   **4. Search page:** It helps the user to discover a world of literature with distinct features. <br>
       - *Book search feature:* Users can explore new books based on their interests , view recommendations, check reviews and ratings.<br>
       - *Clubs or fandoms search feature:* Users can explore for clubs or fandoms and join the ones that resonate with them.<br> 
       - *Friend search feature:* For users to connect and expand their literary circle by finding and adding friends.
  
-      **5. Book page:** This page will display the comprehensive details of a book in particular for the user.  It will show the book’s:<br>
+   **5. Book page:** This page will display the comprehensive details of a book in particular for the user.  It will show the book’s:<br>
             - Title<br>
             - Editorial<br>
             - Covers<br>
@@ -61,29 +61,29 @@ It targets a mature audience (+18) that are  book enthusiasts, avid readers, stu
             - Genre<br>
             - Purchase options<br>
             - Supported formats: audio, kindle, traditional<br>
-            -Club and fandoms created from this book<br>
+            - Club and fandoms created from this book<br>
 
       Also on this page, the users will be able to add, categorize, and organize books in their virtual bookshelf, mark books as read, and set bookmarks.
 
-      **6. Clubs page:** The main page of the club. The user will be able to engage in discussions, explore shared reads, and connect with fellow enthusiasts. This dedicated space functions as a forum, offering the user the opportunity to contribute to lively conversations,  and initiate discussion with their fellow members of the club. 
+   **6. Clubs page:** The main page of the club. The user will be able to engage in discussions, explore shared reads, and connect with fellow enthusiasts. This dedicated space functions as a forum, offering the user the opportunity to contribute to lively conversations,  and initiate discussion with their fellow members of the club. 
 
-      **7. Fandom Page:** The main page of fandom. In a similar fashion as the club page. The Fandom page will work as a forum, users will be able to engage discussions and create new ones with the other members of the fandom. 
+   **7. Fandom Page:** The main page of fandom. In a similar fashion as the club page. The Fandom page will work as a forum, users will be able to engage discussions and create new ones with the other members of the fandom. 
  
 - **Identify three goals of the application:**<br>
-      1. *Built a community:* Support reading, and help the book industry. 
+   1. *Built a community:* Support reading, and help the book industry. 
 
-      2. *Simplify Book Management:* Provide a seamless platform for users to organize and manage their personal book collections by making a virtual bookshelf.
+   2. *Simplify Book Management:* Provide a seamless platform for users to organize and manage their personal book collections by making a virtual bookshelf.
 
-      3. *Enhance Reading Experience:* Offer tools and features to improve the overall reading experience,  alone and as a group, and keep track of reading progress. And at the same time. 
+   3. *Enhance Reading Experience:* Offer tools and features to improve the overall reading experience,  alone and as a group, and keep track of reading progress. And at the same time. 
 
 - **Identify tools/software you will use to complete the project:** <br>
-      1. *Frontend:* HTML, CSS, JavaScript
+   1. *Frontend:* HTML, CSS, JavaScript
 
-      2. *Backend:* Node.js, Express.js
+   2. *Backend:* Node.js, Express.js
 
-      3. *Database:* MongoDB
+   3. *Database:* MongoDB
 
-      4. *Other Tools:* Git, GitHub, GitHub Codespaces, VS Code, Canva
+   4. *Other Tools:* Git, GitHub, GitHub Codespaces, VS Code, Canva
 
 
 
