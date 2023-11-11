@@ -48,22 +48,22 @@ It targets a mature audience (+18) that are  book enthusiasts, avid readers, stu
    **3. Profile:** Users can empower their reading journey by creating and managing their profile by tracking their reading statistics, setting and achieving reading goals, and take charge by creating new fandoms or book clubs.
 
    **4. Search page:** It helps the user to discover a world of literature with distinct features. <br>
-      - *Book search feature:* Users can explore new books based on their interests , view recommendations, check reviews and ratings.<br>
-      - *Clubs or fandoms search feature:* Users can explore for clubs or fandoms and join the ones that resonate with them.<br> 
-      - *Friend search feature:* For users to connect and expand their literary circle by finding and adding friends.
+    1. *Book search feature:* Users can explore new books based on their interests , view recommendations, check reviews and ratings.<br>
+    2. *Clubs or fandoms search feature:* Users can explore for clubs or fandoms and join the ones that resonate with them.<br> 
+    3. *Friend search feature:* For users to connect and expand their literary circle by finding and adding friends.
  
    **5. Book page:** This page will display the comprehensive details of a book in particular for the user.  It will show the book’s:<br>
-            - Title<br>
-            - Editorial<br>
-            - Covers<br>
-            - Author<br>
-            - ISBN<br>
-            - Genre<br>
-            - Purchase options<br>
-            - Supported formats: audio, kindle, traditional<br>
-            - Club and fandoms created from this book<br>
+    1. Title<br>
+    2. Editorial<br>
+    3. Covers<br>
+    4. Author<br>
+    5. ISBN<br>
+    6. Genre<br>
+    7. Purchase options<br>
+    8. Supported formats: audio, kindle, traditional<br>
+    9. Club and fandoms created from this book<br>
 
-      Also on this page, the users will be able to add, categorize, and organize books in their virtual bookshelf, mark books as read, and set bookmarks.
+   Also on this page, the users will be able to add, categorize, and organize books in their virtual bookshelf, mark books as read, and set bookmarks.
 
    **6. Clubs page:** The main page of the club. The user will be able to engage in discussions, explore shared reads, and connect with fellow enthusiasts. This dedicated space functions as a forum, offering the user the opportunity to contribute to lively conversations,  and initiate discussion with their fellow members of the club. 
 
