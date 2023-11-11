@@ -24,12 +24,10 @@ After this course, your application will consist of the following components lis
 For this deliverable, you will need to modify the readme file and add responses to the questions below. that you are currently reading and address the following items below using a variety of permissible markdown syntax.
 
 - **Team's name:**
-Ria’s idea: DigiReads Connector 
-Consuelo’s: Bookworms (ria’s is cooler) 
+   DigiReads Connector 
 
 - **Name of the application:**
-Consuelo's: BookClub, Read and Share, Socialbook,
- Ria’s idea: BookHub
+    BookHub
 
 - **Description of application:**<br>
 This Website is devoted to passionate book enthusiasts seeking a particular literary gem, eager to engage in a book club, or immerse themselves in fandoms. Each user will possess an account empowering them to search for books, share insightful comments, provide reviews, and, most importantly, become part of vibrant book clubs or fandoms. By fostering a community centered around books, this platform aims to transcend the solitary nature of reading, transforming it into a shared and communal experience. Additionally, users can effortlessly track and share their reading progress, further enhancing the community's collaborative spirit.
