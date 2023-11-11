@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/N/A/issues"
   },
-  "homepage": "https://github.com/N/A#readme"
+  "homepage": "https://github.com/N/A#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1"
+  }
 }
