@@ -73,7 +73,15 @@ It targets a mature audience (+18) that are  book enthusiasts, avid readers, stu
    Provide personalized book recommendations tailored to each user's taste, ensuring a more enjoyable and customized reading experience.
    Allow users to fine-tune their preferences to improve the accuracy of the recommendation algorithm. Enhance the algorithm over time, leveraging user feedback and community interactions to continually refine the book suggestions.
    This addition will not only engage users but also make their experience more personalized and satisfying.
- 
+
+   **9. Reading Challenges:
+   Enable users to set reading goals and challenges, such as reading a certain number of books within a specified time frame or exploring books from diverse genres.
+   Provide a progress tracker within the user's profile, allowing them to monitor their achievements and share their reading challenges with the community.
+   Introduce badges or rewards for users who successfully complete reading challenges, fostering a sense of accomplishment and friendly competition within the community.
+   romote community engagement by allowing users to create group challenges that book clubs or fandoms can participate in collectively.
+   This new function adds a gamified element to the platform, motivating users to set and achieve reading goals while fostering a sense of community around shared challenges.
+
+git 
 - **Identify three goals of the application:**<br>
    1. *Built a community:* Support reading, and help the book industry. 
 
