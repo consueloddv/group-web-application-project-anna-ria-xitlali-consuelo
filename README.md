@@ -66,6 +66,13 @@ It targets a mature audience (+18) that are  book enthusiasts, avid readers, stu
    **6. Clubs page:** The main page of the club. The user will be able to engage in discussions, explore shared reads, and connect with fellow enthusiasts. This dedicated space functions as a forum, offering the user the opportunity to contribute to lively conversations,  and initiate discussion with their fellow members of the club. 
 
    **7. Fandom Page:** The main page of fandom. In a similar fashion as the club page. The Fandom page will work as a forum, users will be able to engage discussions and create new ones with the other members of the fandom. 
+
+   **8. Additional Function:
+   Book Recommendation Algorithm:
+   Implement an intelligent recommendation system that analyzes the user's reading history, preferences, and activities within book clubs or fandoms.
+   Provide personalized book recommendations tailored to each user's taste, ensuring a more enjoyable and customized reading experience.
+   Allow users to fine-tune their preferences to improve the accuracy of the recommendation algorithm. Enhance the algorithm over time, leveraging user feedback and community interactions to continually refine the book suggestions.
+   This addition will not only engage users but also make their experience more personalized and satisfying.
  
 - **Identify three goals of the application:**<br>
    1. *Built a community:* Support reading, and help the book industry. 
