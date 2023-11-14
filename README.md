@@ -67,25 +67,21 @@ It targets a mature audience (+18) of individuals who are book enthusiasts, avid
 
    **7. Fandom Page:** The main page of fandom. In a similar fashion as the club page. The Fandom page will work as a forum, users will be able to engage in discussions and create new ones with the other members of the fandom. 
 
-   **8. Additional Function:**
+   **8. Additional function:**
       1. *Book Recommendation Algorithm:* 
-   Implement an intelligent recommendation system that analyzes the user's reading history, preferences, and activities within book clubs or fandoms. Provide personalized book recommendations tailored to each user's taste, ensuring a more enjoyable and customized reading experience. Allow users to fine-tune their preferences to improve the accuracy of the recommendation algorithm. Enhance the algorithm over time, leveraging user feedback and community interactions to continually refine the book suggestions. This addition will not only engage users but also make their experience more personalized and satisfying. <br>
+      Implement an intelligent recommendation system that analyzes the user's reading history, preferences, and activities within book clubs or fandoms. Provide personalized book recommendations tailored to each user's taste, ensuring a more enjoyable and customized reading experience. Allow users to fine-tune their preferences to improve the accuracy of the recommendation algorithm. Enhance the algorithm over time, leveraging user feedback and community interactions to continually refine the book suggestions. This addition will not only engage users but also make their experience more personalized and satisfying. <br>
       2. *Book rating opportunity:* Allowing readers to rate books they have read. A book can be rated on difficulty level, recommendation level, or a reader may personally rate of book on how much they liked it.<br>
 
-   **9. Reading Challenges:**
-   Enable users to set reading goals and challenges, such as reading a certain number of books within a specified time frame or exploring books from diverse genres.
-   Provide a progress tracker within the user's profile, allowing them to monitor their achievements and share their reading challenges with the community.
-   Introduce badges or rewards for users who complete reading challenges, fostering a sense of accomplishment and friendly competition within the community.
-   Remote community engagement by allowing users to create group challenges that book clubs or fandoms can participate in collectively.
-   This new function adds a gamified element to the platform, motivating users to set and achieve reading goals while fostering a sense of community around shared challenges.
+   **9. Reading challenges:**
+   Enable users to set reading goals and challenges, such as reading a certain number of books within a specified time frame or exploring books from diverse genres. Provide a progress tracker within the user's profile, allowing them to monitor their achievements and share their reading challenges with the community. Introduce badges or rewards for users who complete reading challenges, fostering a sense of accomplishment and friendly competition within the community. Remote community engagement by allowing users to create group challenges that book clubs or fandoms can participate in collectively. This new function adds a gamified element to the platform, motivating users to set and achieve reading goals while fostering a sense of community around shared challenges.
 
  
 - **Identify three goals of the application:**<br>
    1. *Built a community:* Support reading, and help the book industry. 
 
-   2. *Simplify Book Management:* Provide a seamless platform for users to organize and manage their personal book collections by making a virtual bookshelf.
+   2. *Simplify book management:* Provide a seamless platform for users to organize and manage their personal book collections by making a virtual bookshelf.
 
-   3. *Enhance Reading Experience:* Offer tools and features to improve the overall reading experience, alone and as a group, and keep track of reading progress.
+   3. *Enhance reading experience:* Offer tools and features to improve the overall reading experience, alone and as a group, and keep track of reading progress.
 
 - **Identify tools/software you will use to complete the project:** <br>
    1. *Frontend:* HTML, CSS, JavaScript
