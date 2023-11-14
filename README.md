@@ -30,24 +30,24 @@ For this deliverable, you will need to modify the readme file and add responses 
     BookHub
 
 - **Description of application:**<br>
-This Website is devoted to passionate book enthusiasts seeking a particular literary gem, eager to engage in a book club, or immerse themselves in fandoms. Each user will possess an account empowering them to search for books, share insightful comments, provide reviews, and, most importantly, become part of vibrant book clubs or fandoms. By fostering a community centered around books, this platform aims to transcend the solitary nature of reading, transforming it into a shared and communal experience. Additionally, users can effortlessly track and share their reading progress, further enhancing the community's collaborative spirit.
+This Website is devoted to passionate book enthusiasts seeking a particular literary gem, eager to engage in a book club or immerse themselves in fandoms. Each user will possess an account empowering them to search for books, share insightful comments, provide reviews, and, most importantly, become part of vibrant book clubs or fandoms. By fostering a community centered around books, this platform aims to transcend the solitary nature of reading, transforming it into a shared and communal experience. Additionally, users can effortlessly track and share their reading progress, further enhancing the community's collaborative spirit.
 
 - **Describe the need and purpose of the application:**<br>
-In a world where the act of reading typically unfolds in solitude, [BookClub, Read and Share] emerges as a vital solution, meeting the innate human need for connection and shared experiences within the vast realm of literature. This groundbreaking web application is meticulously designed to seamlessly blend the solitary nature of reading with the innate desire for companionship. Serving as a virtual gathering place for book enthusiasts, [BookClub, Read and Share] reshapes the traditional solo experience of reading into a dynamic and social endeavor.In recognizing that books aren't merely stories but gateways to unexplored worlds, our application acts as a catalyst for communities where these literary realms can be collectively embraced. At its core, [BookClub, Read and Share] serves an essential purpose — streamlining the complex task of managing one's reading materials while simultaneously providing a carefully curated platform for discovering new literary gems tailored to individual preferences. In essence, it meets the fundamental need for a centralized hub, effortlessly connecting readers with books and like-minded individuals, thereby transforming the reading experience from a solitary pursuit into a vibrant communal journey.
+In a world where the act of reading typically unfolds in solitude, [BookClub, Read and Share] emerges as a vital solution, meeting the innate human need for connection and shared experiences within the vast realm of literature. This groundbreaking web application is meticulously designed to seamlessly blend the solitary nature of reading with the innate desire for companionship. Serving as a virtual gathering place for book enthusiasts, [BookClub, Read and Share] reshapes the traditional solo experience of reading into a dynamic and social endeavor. In recognizing that books aren't merely stories but gateways to unexplored worlds, our application acts as a catalyst for communities where these literary realms can be collectively embraced. At its core, [BookClub, Read and Share] serves an essential purpose — streamlining the complex task of managing one's reading materials while simultaneously providing a carefully curated platform for discovering new literary gems tailored to individual preferences. In essence, it meets the fundamental need for a centralized hub, effortlessly connecting readers with books and like-minded individuals, thereby transforming the reading experience from a solitary pursuit into a vibrant communal journey.
 
 - **Intended target audience:**<br>
-It targets a mature audience (+18) that are  book enthusiasts, avid readers, students, and anyone who enjoys reading and wants to maintain an organized reading list. It caters to individuals who want to keep track of their reading progress, explore new books, and share recommendations with fellow book lovers. 
+It targets a mature audience (+18) of individuals who are book enthusiasts, avid readers, students, and anyone who enjoys reading and wants to maintain an organized reading list. It caters to individuals who want to keep track of their reading progress, explore new books, and share recommendations with fellow book lovers. 
 
 - **Identify the various pages your application will have and describe what users will be able to accomplish:**<br>
-   **1. Log-in page/home page:** The description of the website, the creators, and some statistics such as numbers of clubs, and fandom 
+   **1. Log-in page/home page:** The description of the website, the creators, and some statistics such as numbers of clubs, and fandom. 
 
    **2. Feed page:**  Users can stay in the loop with the latest updates from clubs and fandoms they are subscribed to. Additionally, they'll enjoy a curated feed of their friends' publications.
 
-   **3. Profile:** Users can empower their reading journey by creating and managing their profile by tracking their reading statistics, setting and achieving reading goals, and take charge by creating new fandoms or book clubs.
+   **3. Profile:** Users can empower their reading journey by creating and managing their profile by tracking their reading statistics, setting and achieving reading goals, and taking charge by creating new fandoms or book clubs.
 
    **4. Search page:** It helps the user to discover a world of literature with distinct features. <br>
-    1. *Book search feature:* Users can explore new books based on their interests , view recommendations, check reviews and ratings.<br>
-    2. *Clubs or fandoms search feature:* Users can explore for clubs or fandoms and join the ones that resonate with them.<br> 
+    1. *Book search feature:* Users can explore new books based on their interests, view recommendations, check reviews and ratings.<br>
+    2. *Clubs or fandoms search feature:* Users can explore clubs or fandoms and join the ones that resonate with them.<br> 
     3. *Friend search feature:* For users to connect and expand their literary circle by finding and adding friends.
  
    **5. Book page:** This page will display the comprehensive details of a book in particular for the user.  It will show the book’s:<br>
@@ -65,7 +65,7 @@ It targets a mature audience (+18) that are  book enthusiasts, avid readers, stu
 
    **6. Clubs page:** The main page of the club. The user will be able to engage in discussions, explore shared reads, and connect with fellow enthusiasts. This dedicated space functions as a forum, offering the user the opportunity to contribute to lively conversations,  and initiate discussion with their fellow members of the club. 
 
-   **7. Fandom Page:** The main page of fandom. In a similar fashion as the club page. The Fandom page will work as a forum, users will be able to engage discussions and create new ones with the other members of the fandom. 
+   **7. Fandom Page:** The main page of fandom. In a similar fashion as the club page. The Fandom page will work as a forum, users will be able to engage in discussions and create new ones with the other members of the fandom. 
 
    **8. Additional Function:
    Book Recommendation Algorithm:
@@ -77,8 +77,8 @@ It targets a mature audience (+18) that are  book enthusiasts, avid readers, stu
    **9. Reading Challenges:
    Enable users to set reading goals and challenges, such as reading a certain number of books within a specified time frame or exploring books from diverse genres.
    Provide a progress tracker within the user's profile, allowing them to monitor their achievements and share their reading challenges with the community.
-   Introduce badges or rewards for users who successfully complete reading challenges, fostering a sense of accomplishment and friendly competition within the community.
-   romote community engagement by allowing users to create group challenges that book clubs or fandoms can participate in collectively.
+   Introduce badges or rewards for users who complete reading challenges, fostering a sense of accomplishment and friendly competition within the community.
+   Remote community engagement by allowing users to create group challenges that book clubs or fandoms can participate in collectively.
    This new function adds a gamified element to the platform, motivating users to set and achieve reading goals while fostering a sense of community around shared challenges.
 
 git 
@@ -87,7 +87,7 @@ git
 
    2. *Simplify Book Management:* Provide a seamless platform for users to organize and manage their personal book collections by making a virtual bookshelf.
 
-   3. *Enhance Reading Experience:* Offer tools and features to improve the overall reading experience,  alone and as a group, and keep track of reading progress. And at the same time. 
+   3. *Enhance Reading Experience:* Offer tools and features to improve the overall reading experience, alone and as a group, and keep track of reading progress.
 
 - **Identify tools/software you will use to complete the project:** <br>
    1. *Frontend:* HTML, CSS, JavaScript
