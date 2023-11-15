@@ -1,14 +1,14 @@
 {
   "name": "cpst-342-group-web-application-project-anna-ria-xitlali-consuelo",
   "version": "1.0.0",
-  "description": "N/A",
+  "description": "BookHub",
   "main": "test.js",
   "scripts": {
     "test": "N/A"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/N/A.git"
+    "url": "https://github.com/LUC-Intro-to-Web-Development/cpst-342-group-web-application-project-anna-ria-xitlali-consuelo.git"
   },
   "keywords": [
     "N/A"
@@ -16,7 +16,7 @@
   "author": "Consuelo and Ria",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/N/A/issues"
+    "url": "https://github.com/LUC-Intro-to-Web-Development/cpst-342-group-web-application-project-anna-ria-xitlali-consuelo.git"
   },
   "homepage": "https://github.com/N/A#readme",
   "dependencies": {
