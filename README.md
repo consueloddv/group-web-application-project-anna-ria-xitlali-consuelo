@@ -1,3 +1,4 @@
+[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=12688241&assignment_repo_type=AssignmentRepo)
 # CPST 342 Group Project Repository 
 
 You will complete three assignments that will culminate in developing a monolithic full-stack web application. 
@@ -22,19 +23,76 @@ After this course, your application will consist of the following components lis
 ### Deliverable 1 (10 Points)
 For this deliverable, you will need to modify the readme file and add responses to the questions below. that you are currently reading and address the following items below using a variety of permissible markdown syntax.
 
-- Provide your name or the team's name
-- Name of the application
-- Description of application *Describe how someone will use your application
-- Describe the need and purpose of the application
-- Intended target audience
-- Identify the various pages your application will have and describe what users will be able to accomplish
-- Identify three goals of the application
-- Identify tools/software you will use to complete the project. 
-* I suggest using an online coding environment that will allow your team to work collaboratively and practice git commands.  A few are listed below.
-   - [CodeSandbox.io](https://codesandbox.io/)
-   - [Replit.com](https://replit.com/)
-   - [GitHub Codespaces](https://github.com/features/codespaces)
-     - Click [here](https://docs.github.com/en/codespaces/developing-in-a-codespace/working-collaboratively-in-a-codespace) for information on using codespaces to collaborate with group members. 
+- **Team's name:**
+   DigiReads Connector 
+
+- **Name of the application:**
+    BookHub
+
+- **Description of application:**<br>
+This Website is devoted to passionate book enthusiasts seeking a particular literary gem, eager to engage in a book club or immerse themselves in fandoms. Each user will possess an account empowering them to search for books, share insightful comments, provide reviews, and, most importantly, become part of vibrant book clubs or fandoms. By fostering a community centered around books, this platform aims to transcend the solitary nature of reading, transforming it into a shared and communal experience. Additionally, users can effortlessly track and share their reading progress, further enhancing the community's collaborative spirit.
+
+- **Describe the need and purpose of the application:**<br>
+In a world where the act of reading typically unfolds in solitude, [BookClub, Read and Share] emerges as a vital solution, meeting the innate human need for connection and shared experiences within the vast realm of literature. This groundbreaking web application is meticulously designed to seamlessly blend the solitary nature of reading with the innate desire for companionship. Serving as a virtual gathering place for book enthusiasts, [BookClub, Read and Share] reshapes the traditional solo experience of reading into a dynamic and social endeavor. In recognizing that books aren't merely stories but gateways to unexplored worlds, our application acts as a catalyst for communities where these literary realms can be collectively embraced. At its core, [BookClub, Read and Share] serves an essential purpose — streamlining the complex task of managing one's reading materials while simultaneously providing a carefully curated platform for discovering new literary gems tailored to individual preferences. In essence, it meets the fundamental need for a centralized hub, effortlessly connecting readers with books and like-minded individuals, thereby transforming the reading experience from a solitary pursuit into a vibrant communal journey.
+
+- **Intended target audience:**<br>
+It targets a mature audience (+18) of individuals who are book enthusiasts, avid readers, students, and anyone who enjoys reading and wants to maintain an organized reading list. It caters to individuals who want to keep track of their reading progress, explore new books, and share recommendations with fellow book lovers. 
+
+- **Identify the various pages your application will have and describe what users will be able to accomplish:**<br>
+   **1. Log-in page/home page:** The description of the website, the creators, and some statistics such as numbers of clubs, and fandom. Will also include an area where the reader can log in to access their personalized page. 
+
+   **2. Feed page:**  Users can stay in the loop with the latest updates from clubs and fandoms they are subscribed to. Additionally, they'll enjoy a curated feed of their friends' publications.
+
+   **3. Profile:** Users can empower their reading journey by creating and managing their profile by tracking their reading statistics, setting and achieving reading goals, and taking charge by creating new fandoms or book clubs.
+
+   **4. Search page:** It helps the user to discover a world of literature with distinct features. <br>
+    1. *Book search feature:* Users can explore new books based on their interests, view recommendations, check reviews and ratings.<br>
+    2. *Clubs or fandoms search feature:* Users can explore clubs or fandoms and join the ones that resonate with them.<br> 
+    3. *Friend search feature:* For users to connect and expand their literary circle by finding and adding friends.
+ 
+   **5. Book page:** This page will display the comprehensive details of a book in particular for the user.  It will show the book’s:<br>
+    1. Title<br>
+    2. Editorial<br>
+    3. Covers<br>
+    4. Author<br>
+    5. ISBN<br>
+    6. Genre<br>
+    7. Purchase options<br>
+    8. Supported formats: audio, kindle, traditional<br>
+    9. Club and fandoms created from this book<br>
+
+   Also on this page, the users will be able to add, categorize, and organize books in their virtual bookshelf, mark books as read, and set bookmarks.
+
+   **6. Clubs page:** The main page of the club. The user will be able to engage in discussions, explore shared reads, and connect with fellow enthusiasts. This dedicated space functions as a forum, offering the user the opportunity to contribute to lively conversations,  and initiate discussion with their fellow members of the club. 
+
+   **7. Fandom Page:** The main page of fandom. In a similar fashion as the club page. The Fandom page will work as a forum, users will be able to engage in discussions and create new ones with the other members of the fandom. 
+
+   **8. Additional function:**
+      1. *Book Recommendation Algorithm:* 
+      Implement an intelligent recommendation system that analyzes the user's reading history, preferences, and activities within book clubs or fandoms. Provide personalized book recommendations tailored to each user's taste, ensuring a more enjoyable and customized reading experience. Allow users to fine-tune their preferences to improve the accuracy of the recommendation algorithm. Enhance the algorithm over time, leveraging user feedback and community interactions to continually refine the book suggestions. This addition will not only engage users but also make their experience more personalized and satisfying. <br>
+      2. *Book rating opportunity:* Allowing readers to rate books they have read. A book can be rated on difficulty level, recommendation level, or a reader may personally rate of book on how much they liked it.<br>
+
+   **9. Reading challenges:**
+   Enable users to set reading goals and challenges, such as reading a certain number of books within a specified time frame or exploring books from diverse genres. Provide a progress tracker within the user's profile, allowing them to monitor their achievements and share their reading challenges with the community. Introduce badges or rewards for users who complete reading challenges, fostering a sense of accomplishment and friendly competition within the community. Remote community engagement by allowing users to create group challenges that book clubs or fandoms can participate in collectively. This new function adds a gamified element to the platform, motivating users to set and achieve reading goals while fostering a sense of community around shared challenges.
+
+ 
+- **Identify three goals of the application:**<br>
+   1. *Built a community:* Support reading, and help the book industry. 
+
+   2. *Simplify book management:* Provide a seamless platform for users to organize and manage their personal book collections by making a virtual bookshelf.
+
+   3. *Enhance reading experience:* Offer tools and features to improve the overall reading experience, alone and as a group, and keep track of reading progress.
+
+- **Identify tools/software you will use to complete the project:** <br>
+   1. *Frontend:* HTML, CSS, JavaScript
+
+   2. *Backend:* Node.js, Express.js
+
+   3. *Database:* MongoDB
+
+   4. *Other Tools:* Git, GitHub, GitHub Codespaces, VS Code, Canva
+
+
 
 ### Deliverable 2 (10 Points)
 For this deliverable, you will demonstrate your understanding of modules and JavaScript.  Listed below are tasks you will need to complete to satisfy the requirements for this deliverable.
@@ -111,4 +169,5 @@ Once requirements from deliverable 1 -7 are met and and your group would like an
 Your project folder will need to be submitted to the assigned GitHub repository provided to you by the instructor. In Sakai, you will need to submit the link to your repository by the due date and time listed in the write-up. Make sure you receive confirmation from Sakai that your assignment has been submitted.
 
 ## Resources
-[Markdown Syntax CheatSheet](https://enterprise.github.com/downloads/en/markdown-cheatsheet.pdf)
+[Markdown Syntax CheatSheet](https://enterprise.github.com/downloads/en/markdown-cheatsheet.pdf) .open
+
