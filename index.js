@@ -1,3 +1,6 @@
+//consuelo branch
+
+
 // Function to welcome a user
 function welcomeUser(username) {
     console.log("Welcome " + username + " ! Enjoy your literary journey.");
