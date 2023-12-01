@@ -21,5 +21,8 @@
   "homepage": "https://github.com/N/A#readme",
   "dependencies": {
     "bcrypt": "^5.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }
