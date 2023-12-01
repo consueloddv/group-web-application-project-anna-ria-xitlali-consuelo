@@ -9,6 +9,7 @@ app.use(express.static('assets'))
 
 // view engine setup -> We'll use handlebars.js as our templating engine
 app.set('view engine', 'html');
+
 // allows our application to use .html extension | *Create a views folder and add your HTML documents
 app.engine('html', require('hbs').__express);
 
@@ -18,11 +19,11 @@ app.use(express.json());
 // For parsing application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-// Routes
+/** Routes
 app.get('/', function (req, res) {
 	console.log("Sent as a get request");
 
-	res.render('home', { title: "Routing in Action!"})
+	res.render('index', { title: "BookHub"})
 })
 
 app.get('/users/:id', function (req, res) {
@@ -49,5 +50,5 @@ app.get('/contact', function (req, res) {
 	res.render( 'contact', {title : "Contact Page"})
  })
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))**/
 

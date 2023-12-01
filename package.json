@@ -4,6 +4,7 @@
   "description": "BookHub",
   "main": "test.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "N/A"
   },
   "repository": {
