@@ -51,3 +51,50 @@ function welcomeUser(username) {
  //call the function
  joinCommunity(user, community);
  
+
+// Routes
+app.get('/', (req, res) => {
+   res.render('index', { title: 'BookHub' });
+ });
+ 
+ // Route to get all books
+ app.get('/books', async (req, res) => {
+   try {
+     const response = await axios.get('https://openlibrary.org/api/books?limit=10'); // Make an API call to Open Library
+     const books = response.data.docs;
+     res.render('books', { books }); // Render the books template with the retrieved books
+   } catch (error) {
+     console.error('Error fetching books:', error);
+     res.status(500).send('Error retrieving books');
+   }
+ });
+ 
+ // Route to get a specific book by ID
+ app.get('/book/:id', async (req, res) => {
+   const bookId = req.params.id;
+ 
+   try {
+     const response = await axios.get(`https://openlibrary.org/api/books/${bookId}`); // Make an API call to Open Library
+     const book = response.data;
+     res.render('book', { book }); // Render the book template with the retrieved book
+   } catch (error) {
+     console.error('Error fetching book:', error);
+     res.status(404).send('Book not found');
+   }
+ });
+ 
+ // Route to add a new book review
+ app.post('/review', (req, res) => {
+   const bookId = req.body.bookId;
+   const rating = req.body.rating;
+   const reviewText = req.body.reviewText;
+ 
+   // Process review data
+   console.log(`Book ID: ${bookId}, Rating: ${rating}, Review Text: ${reviewText}`);
+ 
+   res.send('Thank you for your review!');
+ });
+ 
+ app.listen(3000, () => {
+   console.log('BookHub started on port 3000');
+ });
