@@ -1,56 +1,65 @@
-//consuelo branch
+//express
+const express = require('express')
+const dbOperations = require('./database.js');
+const app = express()
+const port = 3000
+
+/**To serve static files such as images, CSS files, and JavaScript files, create a folders
+* and include the below statement.  The below statement assumes that I have a folder named assets
+**/
+app.use(express.static('assets'))
+
+// view engine setup
+app.set("view engine", "hbs");
+
+// parse application/json
+app.use(express.json());
+
+// For parsing application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
 
 
-// Function to welcome a user
-function welcomeUser(username) {
-    console.log("Welcome " + username + " ! Enjoy your literary journey.");
- }
- //Define the variable
- var user = "Shuvrajit";
- 
- 
- //call the function
- welcomeUser(user);
- 
- 
- 
- 
- // Function to search for a book
- function searchBook(bookTitle) {
-    console.log("Searching for " + bookTitle);
- }
- //Define the variable
- var bookName = "The God of Small Things";
- 
- 
- //call the function
- searchBook(bookName);
- 
- 
- 
- 
- // Function to add a review
- function addReview(bookTitle, review) {
-    console.log("Adding review for " + bookTitle + " : " + review);
- }
- //Define the variable
- var comment = "The Characters are just so realistic and full of life along with the beautiful poetic writing style with the wonderful atmosphere built in just for the perfect book. Esthappen, Rahel and Ammu are just my absolute favourites and I love them by all means.";
- 
- 
- //call the function
- addReview(bookName,comment);
- 
- 
- 
- 
- // Function to join a book club or fandom
- function joinCommunity(username, communityType) {
-    console.log(username + " has joined the " + communityType);
- }
- //Define the variable
- var community  = "Fiction Lover";
- 
- 
- //call the function
- joinCommunity(user, community);
- 
+//checking 
+
+app.get('/', function (req, res) {
+	res.render('index.hbs', {title: "BookHub"})
+   
+   //dbOperations.getAllUsers(res);
+
+});
+
+//create account 
+
+
+app.get('/createAccount', function (req, res) {
+   res.render('createAccount.hbs', { title: "Create Account" });
+});
+
+//create accoubnt button 
+app.post('/createAccountForm', function (req, res) {
+   const {userName, password, firstName, lastName, email} = req.query;
+
+   dbOperations.createUser(userName, password, firstName, lastName, email,);
+   
+});
+
+
+
+//get all users 
+
+app.get('/get_all_users', function (req, res) {
+    // Call the function to get all users
+    dbOperations.getAllUsers(res);
+});
+
+// update  user email and password
+
+//app.post('/', funtion(req,res){
+
+//});
+
+
+   // Start the server
+app.listen(port, () => {
+   console.log(`Server is running on http://localhost:${port}`);
+ });
