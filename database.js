@@ -60,16 +60,6 @@ let updateMailPass = (userId,updatedData, res) => {
   });
 };
 
-  //PROVE IF WORKS 
-  /*let userIdToUpdate = 1; // Replace with the actual user ID you want to update
-  const updatedMailPassData = {
-      password: 'otherpassword',
-      email: 'newemail@mail.com'
-  };*/
-  
-  dbOperations.updateMailPass(userIdToUpdate, updatedMailPassData, (result) => {
-      console.log(result);
-  });
 
 //deleteaccountt
 let deleteAccount = (userId, res) => {
@@ -83,6 +73,7 @@ let deleteAccount = (userId, res) => {
   }
 });
 };
+
 
 
 module.exports = { getAllUsers, createUser, updateMailPass, deleteAccount};

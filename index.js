@@ -69,11 +69,9 @@ function welcomeUser(username) {
  addReview(bookName,comment);
  
  
- 
- 
  // Function to join a book club or fandom
- function joinCommunity(username, communityType) {
-    console.log(username + " has joined the " + communityType);
+ function joinCommunity(userName, communityType) {
+    console.log(userName + " has joined the " + communityType);
  }
  //Define the variable
  var community  = "Fiction Lover";
@@ -126,7 +124,9 @@ app.get('/', (req, res) => {
    res.send('Thank you for your review!');
  });
 
-//checking database
+
+
+//routing  database
 
 app.get('/', function (req, res) {
 	res.render('index.hbs', {title: "BookHub"})
@@ -136,7 +136,6 @@ app.get('/', function (req, res) {
 });
 
 //create account 
-
 
 app.get('/createAccount', function (req, res) {
    res.render('createAccount.hbs', { title: "Create Account" });
@@ -152,24 +151,16 @@ app.post('/createAccountForm', function (req, res) {
 
 
 
-//get all users 
+// routing to get all users (show all the user on local:host3000/get_all_users)
 
 app.get('/get_all_users', function (req, res) {
     // Call the function to get all users
     dbOperations.getAllUsers(res);
 });
 
-// update  user email and password
-
-//app.post('/', funtion(req,res){
-
-//});
-
-
- 
  app.listen(3000, () => {
    console.log('BookHub started on port 3000');
  });
 
-8543cd3ec54faa60a6533766954d9ca3c144abf2
+
 
