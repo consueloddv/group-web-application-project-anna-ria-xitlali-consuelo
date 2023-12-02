@@ -61,7 +61,7 @@ let updateMailPass = (userId,updatedData, res) => {
 };
 
   //PROVE IF WORKS 
-  /*const userIdToUpdate = 1; // Replace with the actual user ID you want to update
+  /*let userIdToUpdate = 1; // Replace with the actual user ID you want to update
   const updatedMailPassData = {
       password: 'otherpassword',
       email: 'newemail@mail.com'
