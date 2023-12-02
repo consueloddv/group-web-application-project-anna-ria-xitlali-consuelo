@@ -158,6 +158,19 @@ app.get('/get_all_users', function (req, res) {
     dbOperations.getAllUsers(res);
 });
 
+
+
+//routing to delete 
+app.post('/delete_user', function (req, res) {
+   // Extracting the 
+   const { userName, password, firstName, lastName, email } = req.query;
+ 
+   // Calling the 'deleteAccount' 
+   dbOperations.deleteAccount(userName, password, firstName, lastName, email, res);
+ });
+
+
+
  app.listen(3000, () => {
    console.log('BookHub started on port 3000');
  });

@@ -67,9 +67,9 @@ let deleteAccount = (userId, res) => {
   db.run(deleteA, [userId], (err) => {
     if (err) {
       console.error(err.message);
-      return('Error deleting user.');
+      return('Error deleting account.');
   } else {
-      return('User deleted successfully!');
+      return('Account deleted successfully!');
   }
 });
 };
