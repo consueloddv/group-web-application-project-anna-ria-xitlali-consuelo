@@ -1,5 +1,8 @@
-<<<<<<< HEAD
+
+//express
 const express = require('express')
+const dbOperations = require('./database.js');
+
 const app = express()
 const port = 3000
 
@@ -8,11 +11,13 @@ const port = 3000
 **/
 app.use(express.static('assets'))
 
-// view engine setup -> We'll use handlebars.js as our templating engine
-app.set('view engine', 'html');
+
+// view engine setup
+app.set("view engine", "hbs");
 
 // allows our application to use .html extension | *Create a views folder and add your HTML documents
 app.engine('html', require('hbs').__express);
+
 
 // parse application/json
 app.use(express.json());
@@ -23,7 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 
-=======
+
 // Function to welcome a user
 function welcomeUser(username) {
     console.log("Welcome " + username + " ! Enjoy your literary journey.");
@@ -120,8 +125,51 @@ app.get('/', (req, res) => {
  
    res.send('Thank you for your review!');
  });
+
+//checking database
+
+app.get('/', function (req, res) {
+	res.render('index.hbs', {title: "BookHub"})
+   
+   //dbOperations.getAllUsers(res);
+
+});
+
+//create account 
+
+
+app.get('/createAccount', function (req, res) {
+   res.render('createAccount.hbs', { title: "Create Account" });
+});
+
+//create accoubnt button 
+app.post('/createAccountForm', function (req, res) {
+   const {userName, password, firstName, lastName, email} = req.query;
+
+   dbOperations.createUser(userName, password, firstName, lastName, email,);
+   
+});
+
+
+
+//get all users 
+
+app.get('/get_all_users', function (req, res) {
+    // Call the function to get all users
+    dbOperations.getAllUsers(res);
+});
+
+// update  user email and password
+
+//app.post('/', funtion(req,res){
+
+//});
+
+
  
  app.listen(3000, () => {
    console.log('BookHub started on port 3000');
  });
->>>>>>> 8543cd3ec54faa60a6533766954d9ca3c144abf2
+
+8543cd3ec54faa60a6533766954d9ca3c144abf2
+

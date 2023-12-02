@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BookHub</title>
+    </head>
+    <body>
+         <div id="container">
+            <header>
+            
+            </header>
+            <main id="flexcontainer">
+
+                <aside>
+                    <h2>Create Account</h2>
+                      <form id="createAccountForm" action="/submit" method="POST"></form>
+               <!-- <form id="createAccountForm"> -->
+                    <label>User Name: </label> <input type="text" maxlength="30" id="userName" name="userName"><br>
+                    <label>First Name: </label> <input type="text" maxlength="30" id="firstName" name="firstName"><br>
+                    <label>Last Name: </label> <input type="text" maxlength="30" id="lastName" name="lastName"><br>
+                    <label>Email: </label> <input type="text" id="email" name="email" maxlength="30"><br>
+                    <label>Password: </label> <input type="text" id="password" name="password" maxlength="30"><br>
+                     <button name="create" type="submit" id="submit" value="{{this.users}}">Create</button>
+                </form>
+                       
+                </aside>
+                
+            </main>
+            </div>
+    </body>
