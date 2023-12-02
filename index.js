@@ -135,17 +135,17 @@ app.get('/', function (req, res) {
 
 });
 
-//create account 
+//routing to create account 
 
 app.get('/createAccount', function (req, res) {
    res.render('createAccount.hbs', { title: "Create Account" });
 });
 
 //create accoubnt button 
-app.post('/createAccountForm', function (req, res) {
+app.post('/create_User', function (req, res) {
    const {userName, password, firstName, lastName, email} = req.query;
 
-   dbOperations.createUser(userName, password, firstName, lastName, email,);
+   dbOperations.createUser(userName, password, firstName, lastName, email);
    
 });
 
@@ -162,13 +162,22 @@ app.get('/get_all_users', function (req, res) {
 
 //routing to delete 
 app.post('/delete_user', function (req, res) {
-   // Extracting the 
+   
    const { userName, password, firstName, lastName, email } = req.query;
  
    // Calling the 'deleteAccount' 
    dbOperations.deleteAccount(userName, password, firstName, lastName, email, res);
  });
 
+
+//routing to update 
+app.post('/update_user', function (req, res) {
+
+   const{password, email}= req.query;
+
+   //calling the updateMailPass
+   dbOperations.updateMailPass (password, email, res);
+});
 
 
  app.listen(3000, () => {

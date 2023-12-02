@@ -35,7 +35,8 @@ let getAllUsers = (res) => {
 // Function to create user in the database
 let createUser = (res) => {
     var createNewUser= 'INSERT INTO user (userName, password, firstName, lastName, email) VALUES (?, ?, ?, ?, ?)';
-    var params= [userName, password, firstName, lastName, email, callback]
+    var params= [userName, password, firstName, lastName, email, callback];
+    
     db.run(createNewUser, params, function(err) {
         if (err) {
            return console.log (err.message);
