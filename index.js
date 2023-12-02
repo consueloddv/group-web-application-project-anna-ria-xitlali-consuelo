@@ -1,3 +1,29 @@
+<<<<<<< HEAD
+const express = require('express')
+const app = express()
+const port = 3000
+
+/**To serve static files such as images, CSS files, and JavaScript files, create a folders
+* and include the below statement.  The below statement assumes that I have a folder named assets
+**/
+app.use(express.static('assets'))
+
+// view engine setup -> We'll use handlebars.js as our templating engine
+app.set('view engine', 'html');
+
+// allows our application to use .html extension | *Create a views folder and add your HTML documents
+app.engine('html', require('hbs').__express);
+
+// parse application/json
+app.use(express.json());
+
+// For parsing application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
+
+
+
+
+=======
 // Function to welcome a user
 function welcomeUser(username) {
     console.log("Welcome " + username + " ! Enjoy your literary journey.");
@@ -98,3 +124,4 @@ app.get('/', (req, res) => {
  app.listen(3000, () => {
    console.log('BookHub started on port 3000');
  });
+>>>>>>> 8543cd3ec54faa60a6533766954d9ca3c144abf2
