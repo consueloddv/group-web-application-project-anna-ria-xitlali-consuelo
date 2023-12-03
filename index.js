@@ -84,15 +84,15 @@ function welcomeUser(userName) {
 // Routes
 app.get('/', (req, res) => {
    dbOperations.getAllUsers(res)
-   //res.render('index', { title: 'BookHub' });
+   //res.render('index.hbs', { title: 'BookHub' });
  });
  
  // Route to get all books
  app.get('/books', async (req, res) => {
    try {
-     const response = await axios.get('https://openlibrary.org/api/books?limit=10'); // Make an API call to Open Library
+     const response = await axios.get('https://openlibrary.org'); // Make an API call to Open Library
      const books = response.data.docs;
-     res.render('books', { books }); // Render the books template with the retrieved books
+     res.render('books.hbs', { books }); // Render the books template with the retrieved books
    } catch (error) {
      console.error('Error fetching books:', error);
      res.status(500).send('Error retrieving books');
@@ -104,9 +104,9 @@ app.get('/', (req, res) => {
    const bookId = req.params.id;
  
    try {
-     const response = await axios.get(`https://openlibrary.org/api/books/${bookId}`); // Make an API call to Open Library
+     const response = await axios.get(`https://openlibrary.org}`); // Make an API call to Open Library
      const book = response.data;
-     res.render('book', { book }); // Render the book template with the retrieved book
+     res.render('book.hbs', { BookHub }); // Render the book template with the retrieved book
    } catch (error) {
      console.error('Error fetching book:', error);
      res.status(404).send('Book not found');
