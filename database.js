@@ -102,5 +102,5 @@ let deleteAccount = (userId, res) => {
 
 
 
-module.exports = { getAllUsers, createUser, updateMailPass, deleteAccount, getUserByUserName};
+module.exports = { getAllUsers, createUser, updateMail, deleteAccount, getUserByUserName};
 
