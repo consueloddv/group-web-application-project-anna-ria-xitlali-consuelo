@@ -77,4 +77,5 @@ let deleteAccount = (userId, res) => {
 
 
 
+
 module.exports = { getAllUsers, createUser, updateMailPass, deleteAccount};
