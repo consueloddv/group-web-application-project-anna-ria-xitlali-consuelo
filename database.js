@@ -31,6 +31,28 @@ let getAllUsers = (res) => {
   });
 };
 
+let getUserByUserName = (username, password, res) => {
+    var params = [username]
+    var getAll = 'SELECT firstName, lastName, email, userId, userName, password FROM user WHERE userName=?';
+    
+    db.get(getAll, params, function (err, rows) {
+        if (!rows || (rows.length == 0)) {
+            return "Username not found"
+        }
+
+        if (rows.length > 1) {
+            return "User name not unique"
+        } 
+        console.log("users: ", rows)
+        // Send the retrieved data back to the client
+        // res.render('userdetails',(rows));
+        if (err) {
+            throw err;
+        }
+        return rows;
+    });
+  };
+
 
 // Function to create user in the database
 let createUser = (userName, password, firstName, lastName, email, res) => {
@@ -80,4 +102,4 @@ let deleteAccount = (userId, res) => {
 
 
 
-module.exports = { getAllUsers, createUser, updateMailPass, deleteAccount};
+module.exports = { getAllUsers, createUser, updateMailPass, deleteAccount, getUserByUserName};
