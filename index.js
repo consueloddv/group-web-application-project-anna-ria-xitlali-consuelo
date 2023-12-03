@@ -2,6 +2,7 @@
 //express
 const express = require('express')
 const dbOperations = require('./database.js');
+const axios = require('axios').default;
 
 const app = express()
 const port = 3000
@@ -86,11 +87,36 @@ app.get('/', (req, res) => {
    dbOperations.getAllUsers(res)
    //res.render('index.hbs', { title: 'BookHub' });
  });
+
+//Route to submit info
+app.get('/submit', (req, res) => {
+   // the statement below assigns the paramters passed from the from via the name attribute to the variable formInfo.  
+   var formInfo = req.query;
+   
+   // the second argument passes data back to the 
+   res.render('user', {firstname: formInfo.firstName, lastname : formInfo.lastName})
+})
+
+
+/*Route to submit
+app.get('/submit', async(req, res) => {
+   console.log("submit: ", req.query)
+   user = dbOperations.getUserByUserName(req.query.Uname, req.query.passowrd, res)
+   if (!user) {
+      res.render("User not found!")
+   }
+   res.render("user", {user})
+})*/
  
+
+
  // Route to get all books
  app.get('/books', async (req, res) => {
    try {
-     const response = await axios.get('https://openlibrary.org'); // Make an API call to Open Library
+
+     const response = await axios.get('https://openlibrary.org/api/books?limit=10'); // Make an API call to Open Library
+     console.log("books: ", response.data)
+
      const books = response.data.docs;
      res.render('books.hbs', { books }); // Render the books template with the retrieved books
    } catch (error) {
