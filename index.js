@@ -28,10 +28,10 @@ app.use(express.urlencoded({ extended: true }));
 
 
 
-
+/*
 // Function to welcome a user
-function welcomeUser(username) {
-    console.log("Welcome " + username + " ! Enjoy your literary journey.");
+function welcomeUser(userName) {
+    console.log("Welcome " + userName + " ! Enjoy your literary journey.");
  }
  //Define the variable
  var user = "Shuvrajit";
@@ -78,12 +78,13 @@ function welcomeUser(username) {
  
  
  //call the function
- joinCommunity(user, community);
+ joinCommunity(user, community);*/
  
 
 // Routes
 app.get('/', (req, res) => {
-   res.render('index', { title: 'BookHub' });
+   dbOperations.getAllUsers(res)
+   //res.render('index', { title: 'BookHub' });
  });
  
  // Route to get all books
@@ -141,7 +142,13 @@ app.get('/createAccount', function (req, res) {
    res.render('createAccount.hbs', { title: "Create Account" });
 });
 
-//create accoubnt button 
+//Routing to AccountCreated
+
+app.get('/accountCreated', function (req, res) {
+   res.render('accountCreated.hbs', { title: "Account Created Successfully! Welcome to BookHub!" });
+});
+
+//create account button 
 app.post('/create_User', function (req, res) {
    const {userName, password, firstName, lastName, email} = req.query;
 

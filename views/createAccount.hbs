@@ -2,9 +2,11 @@
 <html>
     <head>
         <title>BookHub</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
-         <div id="container">
+         <div id="container" style="width: 50%; margin: auto;">
             <header>
             
             </header>
@@ -19,11 +21,20 @@
                     <label>Last Name: </label> <input type="text" maxlength="30" id="lastName" name="lastName"><br>
                     <label>Email: </label> <input type="text" id="email" name="email" maxlength="30"><br>
                     <label>Password: </label> <input type="text" id="password" name="password" maxlength="30"><br>
-                     <button  name= "create" type="submit" id="submit" value="{{this.users}}">Create</button>
+                    <button type= "button" onClick="accountCreated()" class="btn btn-success">Create Account</button> 
                 </form>
                        
                 </aside>
                 
             </main>
             </div>
+            <script>
+
+                  function accountCreated(){
+                //this function need to route to the url of the contact page
+                //window is a native function of JavaScript
+                window.location.href = "http://localhost:3000/accountCreated"
+            }
+        
+            </script>
     </body>

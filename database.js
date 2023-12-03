@@ -27,15 +27,15 @@ let getAllUsers = (res) => {
       }
       
       // Send the retrieved data back to the client
-      res.send(rows);
+      res.render('index',(rows));
   });
 };
 
 
 // Function to create user in the database
-let createUser = (res) => {
+let createUser = (userName, password, firstName, lastName, email, res) => {
     var createNewUser= 'INSERT INTO user (userName, password, firstName, lastName, email) VALUES (?, ?, ?, ?, ?)';
-    var params= [userName, password, firstName, lastName, email, callback];
+    var params= [userName, password, firstName, lastName, email];
     
     db.run(createNewUser, params, function(err) {
         if (err) {
@@ -62,7 +62,7 @@ let updateMailPass = (userId,updatedData, res) => {
 };
 
 
-//deleteaccountt
+//deleteaccount
 let deleteAccount = (userId, res) => {
   var deleteA ='DELETE FROM user WHERE id=?'
   db.run(deleteA, [userId], (err) => {
