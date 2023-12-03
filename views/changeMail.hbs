@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Update Email</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+    background: #6abadeba;
+}
+#card {
+    position: relative;
+    top: 110px;
+    width: 320px;
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+#upper-side {
+    padding: 2em;
+    background-color: #8BC34A;
+    display: block;
+    color: #fff;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+#checkmark {
+    font-weight: lighter;
+    fill: #fff;
+    margin: -3.5em auto auto 20px;
+}
+#status {
+    font-weight: lighter;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1em;
+    margin-top: -0.2em;
+    margin-bottom: 0;
+}
+#lower-side {
+    padding: 2em 2em 5em 2em;
+    background: #fff;
+    display: block;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+</style>
+    </head>
+    <body>
+         <div id="container" style="width: 50%; margin: auto;">
+            <header>
+            
+            </header>
+            <main id="flexcontainer">
+
+                <aside>
+                    
+                    <br>
+                    <br>
+                    <br>
+                    <h2>Update Email</h2>
+                    <br>
+                      <form id="updateEmail" action="/submit" method="POST"></form>
+                    <label>New Email: </label> <input type="text" id="email" name="email" maxlength="30"><br>
+                    <br>
+                    <button type= "button" onClick="updateM()" class="btn btn-success">Update Email</button> 
+                </form> <br>
+                       
+                </aside>
+                
+            </main>
+            </div>
+            <script>
+
+                  function updateM(){
+                //this function need to route to the url of the contact page
+                //window is a native function of JavaScript
+                window.location.href = "http://localhost:3000/updateM"
+            }
+        
+            </script>
+    </body>
