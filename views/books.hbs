@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<a href="https://openlibrary.org">Open Library</a>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookHub - Books</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>BookHub - Books</h1>
+
+  <ul>
+    {{#each books}}
+      <li>
+        <h3>{{title}}</h3>
+        <p>Author: {{author_name}}</p>
+        <p>Year Published: {{publish_year}}</p>
+        <a href="{{link}}">Read More</a>
+      </li>
+    {{/each}}
+  </ul>
+</body>
+</html>
