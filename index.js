@@ -88,6 +88,17 @@ app.get('/', (req, res) => {
    //res.render('index', { title: 'BookHub' });
  });
 
+//Route to submit info
+app.get('/submit', (req, res) => {
+   // the statement below assigns the paramters passed from the from via the name attribute to the variable formInfo.  
+   var formInfo = req.query;
+   
+   // the second argument passes data back to the 
+   res.render('user', {firstname: formInfo.firstName, lastname : formInfo.lastName})
+})
+
+
+/*Route to submit
 app.get('/submit', async(req, res) => {
    console.log("submit: ", req.query)
    user = dbOperations.getUserByUserName(req.query.Uname, req.query.passowrd, res)
@@ -95,8 +106,10 @@ app.get('/submit', async(req, res) => {
       res.render("User not found!")
    }
    res.render("user", {user})
-})
+})*/
  
+
+
  // Route to get all books
  app.get('/books', async (req, res) => {
    try {
