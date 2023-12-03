@@ -71,9 +71,9 @@ let createUser = (userName, password, firstName, lastName, email, res) => {
 
 
 // update user information mail and password 
-let updateMailPass = (userId,updatedData, res) => {
-  const updateQuery = 'UPDATE user SET password=?, email=? WHERE id=?';
-  db.run(updateQuery, [ updatedData.password, updatedData.email], (err) => {
+let updateMail = (email, res) => {
+  const updateQuery = 'UPDATE user SET  email=? WHERE id=?';
+  db.run(updateQuery, [email], (err) => {
       if (err) {
           console.error(err.message);
           return('Error updating user.');
@@ -103,3 +103,4 @@ let deleteAccount = (userId, res) => {
 
 
 module.exports = { getAllUsers, createUser, updateMailPass, deleteAccount, getUserByUserName};
+

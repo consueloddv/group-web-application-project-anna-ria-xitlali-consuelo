@@ -85,7 +85,7 @@ function welcomeUser(userName) {
 // Routes
 app.get('/', (req, res) => {
    dbOperations.getAllUsers(res)
-   //res.render('index', { title: 'BookHub' });
+   //res.render('index.hbs', { title: 'BookHub' });
  });
 
 //Route to submit info
@@ -113,10 +113,12 @@ app.get('/submit', async(req, res) => {
  // Route to get all books
  app.get('/books', async (req, res) => {
    try {
+
      const response = await axios.get('https://openlibrary.org/api/books?limit=10'); // Make an API call to Open Library
      console.log("books: ", response.data)
+
      const books = response.data.docs;
-     res.render('books', { books }); // Render the books template with the retrieved books
+     res.render('books.hbs', { books }); // Render the books template with the retrieved books
    } catch (error) {
      console.error('Error fetching books:', error);
      res.status(500).send('Error retrieving books');
@@ -128,9 +130,9 @@ app.get('/submit', async(req, res) => {
    const bookId = req.params.id;
  
    try {
-     const response = await axios.get(`https://openlibrary.org/api/books/${bookId}`); // Make an API call to Open Library
+     const response = await axios.get(`https://openlibrary.org}`); // Make an API call to Open Library
      const book = response.data;
-     res.render('book', { book }); // Render the book template with the retrieved book
+     res.render('book.hbs', { BookHub }); // Render the book template with the retrieved book
    } catch (error) {
      console.error('Error fetching book:', error);
      res.status(404).send('Book not found');
@@ -160,25 +162,37 @@ app.get('/', function (req, res) {
 
 });
 
+//routing to profile 
+   app.get('/profileAccount', function (req,res){
+   res.render('profileAccount.hbs', {title:"Your Profile"})
+   });
+      //Routing  button updatemail
+      app.get('/changeMail', function (req, res) {
+      res.render('changeMail.hbs', { title: "Update Your Email" });
+      });
+
+
+
+
 //routing to create account 
 
 app.get('/createAccount', function (req, res) {
    res.render('createAccount.hbs', { title: "Create Account" });
 });
 
-//Routing to AccountCreated
+   //Routing to AccountCreated
 
-app.get('/accountCreated', function (req, res) {
+   app.get('/accountCreated', function (req, res) {
    res.render('accountCreated.hbs', { title: "Account Created Successfully! Welcome to BookHub!" });
-});
+   });
 
-//create account button 
-app.post('/create_User', function (req, res) {
+   //create account button 
+   app.post('/create_User', function (req, res) {
    const {userName, password, firstName, lastName, email} = req.query;
 
    dbOperations.createUser(userName, password, firstName, lastName, email);
    
-});
+   });
 
 
 
@@ -192,26 +206,19 @@ app.get('/get_all_users', function (req, res) {
 
 
 //routing to delete
+
 app.post('/delete_user', function (req, res) {
  
    const {userName, password, firstName, lastName, email, userId} = req.query;
    // Calling the 'deleteAccount'
    dbOperations.deleteAccount(userName, password, firstName, lastName, email, userId, res);
  });
- 
 
- 
-
-//routing to update 
-app.post('/update_user', function (req, res) {
-
-   const{password, email}= req.query;
-
-   //calling the updateMailPass
-   dbOperations.updateMailPass (password, email, res);
+ app.get('/deleteAccount', function (req, res) {
+   res.render('deleteAccount.hbs', { title: "Account Created Successfully! Welcome to BookHub!" });
 });
 
-
+// listen port 
  app.listen(3000, () => {
    console.log('BookHub started on port 3000');
  });
