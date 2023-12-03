@@ -167,14 +167,14 @@ app.get('/get_all_users', function (req, res) {
 
 
 
-//routing to delete 
+//routing to delete
 app.post('/delete_user', function (req, res) {
-   
-   const { userName, password, firstName, lastName, email } = req.query;
  
-   // Calling the 'deleteAccount' 
-   dbOperations.deleteAccount(userName, password, firstName, lastName, email, res);
+   const {userName, password, firstName, lastName, email, userId} = req.query;
+   // Calling the 'deleteAccount'
+   dbOperations.deleteAccount(userName, password, firstName, lastName, email, userId, res);
  });
+ 
 
  
 

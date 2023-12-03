@@ -64,17 +64,19 @@ let updateMailPass = (userId,updatedData, res) => {
 
 //deleteaccount
 let deleteAccount = (userId, res) => {
-  var deleteA ='DELETE FROM user WHERE id=?'
-  db.run(deleteA, [userId], (err) => {
+  var deleteA ='DELETE FROM user WHERE userId=?';
+
+  var params = [userId];
+
+  db.run(deleteA, params, (err) => {
     if (err) {
       console.error(err.message);
       return('Error deleting account.');
   } else {
       return('Account deleted successfully!');
   }
-});
+ }); 
 };
-
 
 
 
