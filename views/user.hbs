@@ -77,8 +77,51 @@
             <main id="flexcontainer">
 
                 <aside>
-                    <h2>Welcome, {{this.firstName}} {{this.lastName}} to BookHub!</h2>         
+                    <aside>
+                    <h1 class="centered">Your Profile</h1>
+                    <br>
+                    <h3 class="centered">Welcome back {{this.userName}}</h3>
+                    <br><br>
+            
+                    <p>User Name: <td>{{this.userName }}</td> </p>
+                    <p>First Name:<td>{{this.fisrtName}}</td></p>
+                    <p>Last Name: {{this.lastName}}</p>
+                    <p>Email:{{this.email}} </p>
+
+                    <br>
+                     
+                    
+                    <button type="button" onclick="changeMail()" class="btn btn-success">Update Email</button> 
+                     <br><br>
+
+                    <form action="/submit" method="GET"> 
+                        <button type= "button" onClick="deleteAccount()" class="btn btn-danger">Delete Account</button> 
+                    </form>
+
+                       
                 </aside>
+                
+            </main>
+            </div>
+            <script>
+
+                 
+                function changeMail() {
+                    //this function need to route to the url of the contact page
+                //window is a native function of JavaScript
+                 window.location.href = "http://localhost:3000/changeMail";
+                 }
+            
+                function deleteAccount(){
+                //this function need to route to the url of the contact page
+                //window is a native function of JavaScript
+                window.location.href = "http://localhost:3000/deleteAccount"
+                 }
+        
+            </script>
+
+    </body>
+</html>
                 
             </main>
             </div>

@@ -43,10 +43,13 @@
                 <aside>
                     <h1 class="centered">Your Profile</h1>
                     <br>
-                    <h3 class="centered">Welcome back {{this.userName}}</h3>
+                    <h3 class="centered">Welcome back  {{this.userName}}</h3>
                     <br><br>
 
                     <p>User Name: <td>{{this.userName }}</td> </p>
+                    <form action="/index" method="POST">
+                    <input type="text"  name="userName" class="form-control"   size="40" value="{{this.userName}}" >
+                    </form>
                     <p>First Name:<td>{{this.fisrtName}}</td></p>
                     <p>Last Name: {{this.lastName}}</p>
                     <p>Email:{{this.email}} </p>

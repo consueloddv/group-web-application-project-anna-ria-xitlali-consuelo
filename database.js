@@ -101,6 +101,10 @@ let deleteAccount = (userId, res) => {
 };
 
 
+let showUser = (res) => {
+    res.render('user.hbs', {res})
+}
 
-module.exports = { getAllUsers, createUser, updateMail, deleteAccount, getUserByUserName};
+
+module.exports = { getAllUsers, createUser, updateMail, deleteAccount, getUserByUserName, showUser};
 
