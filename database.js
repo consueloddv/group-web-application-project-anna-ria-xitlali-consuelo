@@ -1,5 +1,3 @@
-
-
 // data base route
 
 var sqlite3 = require('sqlite3').verbose(); // npm install sqlite3
@@ -17,17 +15,34 @@ let db = new sqlite3.Database('./users.db', sqlite3.OPEN_READWRITE, (err) => {
     }
 });
 
+
+//clear all nulls
+let clearAllNulls = (res) => {
+    var deleteAllNull ='DELETE FROM user WHERE userId is null';
+  
+  
+    db.run(deleteAllNull, (err) => {
+      if (err) {
+        console.error(err.message);
+        return('Error deleting all nulls.');
+    } else {
+        return('all nulls deleted successfully!');
+    }
+   }); 
+  };
+
+
 //Get users 
 
 let getAllUsers = (res) => {
-  var getAll = 'SELECT username, firstName FROM user';
+  var getAll = 'SELECT * FROM user';
   db.all(getAll, function (err, rows) {
       if (err) {
           throw err;
       }
-      
+      console.log('rows ',rows)
       // Send the retrieved data back to the client
-      res.render('index',(rows));
+      res.render('allUsers',(rows));
   });
 };
 
@@ -53,19 +68,43 @@ let getUserByUserName = (username, password, res) => {
     });
   };
 
+  let logIn = (username, password, res) => {
+    
+    var params = [username, password]
+    var getAll = 'SELECT firstName, lastName, email, userId, userName, password FROM user WHERE userName = ? AND password = ?';
+    
+    db.all(getAll, params, function (err, rows) {
+        if (!rows || (rows.length == 0)) {
+            // user not found or password error
+            console.log('Check your username and password')
+        } else if (err) {
+            // error callback
+            throw err;
+        } else {
+            //success logged in
+            console.log("logged in user: ", rows)
+            res.render('user.hbs', {rows})
+        }
+
+        
+    });
+  };
+
 
 // Function to create user in the database
 let createUser = (userName, password, firstName, lastName, email, res) => {
     var createNewUser= 'INSERT INTO user (userName, password, firstName, lastName, email) VALUES (?, ?, ?, ?, ?)';
     var params= [userName, password, firstName, lastName, email];
-    
+    console.log('params: ', params)
     db.run(createNewUser, params, function(err) {
         if (err) {
            return console.log (err.message);
             
         } else {
-           return console.log ('Account created successfully!');
+            console.log ('Account created successfully!');
+            res.render('accountCreated.hbs')
         }
+       
     });
 };
 
@@ -86,7 +125,7 @@ let updateMail = (email, res) => {
 
 //deleteaccount
 let deleteAccount = (userId, res) => {
-  var deleteA ='DELETE FROM user WHERE userId=?';
+  var deleteA ='DELETE FROM user WHERE userId = ?';
 
   var params = [userId];
 
@@ -106,5 +145,5 @@ let showUser = (res) => {
 }
 
 
-module.exports = { getAllUsers, createUser, updateMail, deleteAccount, getUserByUserName, showUser};
+module.exports = { getAllUsers, createUser, updateMail, deleteAccount, getUserByUserName, showUser, logIn,clearAllNulls};
 
