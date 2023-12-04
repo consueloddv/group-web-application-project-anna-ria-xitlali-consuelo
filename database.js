@@ -31,27 +31,48 @@ let getAllUsers = (res) => {
   });
 };
 
+
 let getUserByUserName = (username, password, res) => {
     var params = [username]
     var getAll = 'SELECT firstName, lastName, email, userId, userName, password FROM user WHERE userName=?';
     
-    db.get(getAll, params, function (err, rows) {
-        if (!rows || (rows.length == 0)) {
-            return "Username not found"
-        }
-
-        if (rows.length > 1) {
-            return "User name not unique"
-        } 
-        console.log("users: ", rows)
-        // Send the retrieved data back to the client
-        // res.render('userdetails',(rows));
+    db.get(getAll, params, function (err, user) {
+        console.log("users: ", user)
+        console.log("password: ", password)
         if (err) {
             throw err;
         }
-        return rows;
+        if (!user) {
+            res.render('userNotFound',({
+                username : username
+            }));
+        }
+        else if (user.password != password) {
+            res.render('incorrectPassword',({
+                username : username
+            }));
+        }
+        else {
+            res.render('user',(user));
+        }
     });
   };
+
+// function getUserByUserName(username, password) {
+//     return new Promise((resolve, reject) => {          // return new Promise here <---
+//         var params = [username]
+//         var sql = 'SELECT firstName, lastName, email, userId, userName, password FROM user WHERE userName=?';
+      
+//         return db.run(sql, params, function (err, res) { // .run <----
+//             if (err) {
+//                 console.error("DB Error: getUserByUserName failed: ", err.message);
+//                 return reject(err.message);
+//             }
+//             console.log(res)
+//             return resolve(res);
+//         });
+//     });
+//   }
 
 
 // Function to create user in the database

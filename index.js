@@ -88,25 +88,52 @@ app.get('/', (req, res) => {
    //res.render('index.hbs', { title: 'BookHub' });
  });
 
-//Route to submit info
-app.get('/submit', (req, res) => {
-   // the statement below assigns the paramters passed from the from via the name attribute to the variable formInfo.  
-   var formInfo = req.query;
-   
-   // the second argument passes data back to the 
-   res.render('user', {firstname: formInfo.firstName, lastname : formInfo.lastName})
-})
+ 
+
+// //Route to submit login info
+// app.get('/submit', (req, res) => {
+//    // the statement below assigns the paramters passed from the from via the name attribute to the variable formInfo.  
+//    var formInfo = req.query;
+  
+//    // the second argument passes data back to the 
+//    res.render('user', {name : formInfo.firstName, lastname : formInfo.lastName})
+// })
 
 
-/*Route to submit
+// app.post('/submit', (req, res) => {
+//   const enteredUsername = req.body.username;
+//   const enteredPassword = req.body.password; // Assuming password is also sent in the request body
+
+//   // Call the function to check if the user exists in the database
+//   dbOperations.getUserByUserName(enteredUsername, enteredPassword, (err, user) => {
+//       if (err) {
+//           // Handle database error
+//           console.error('Database error:', err);
+//           res.status(500).send('Internal Server Error');
+//           return;
+//       }
+
+//       if (user.message) {
+//           // User not found or incorrect password
+//           res.render('userNotFound.hbs');
+//           return;
+//       }
+
+//       // User found, render the welcome message
+//       res.render('user.hbs', { name : formInfo.firstName, lastName : formInfo.lastName });
+//   });
+// });
+
+
+// Route to submit
 app.get('/submit', async(req, res) => {
-   console.log("submit: ", req.query)
-   user = dbOperations.getUserByUserName(req.query.Uname, req.query.passowrd, res)
-   if (!user) {
-      res.render("User not found!")
-   }
-   res.render("user", {user})
-})*/
+  console.log("query: ", req.query)
+  dbOperations.getUserByUserName(req.query.Uname, req.query.password, res)
+  //  console.log("user: ", user)
+  //  if (!user) {
+  //     res.render('userNotFound', {})
+  //  }
+})
  
 
 
