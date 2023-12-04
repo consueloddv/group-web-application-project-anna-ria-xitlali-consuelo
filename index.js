@@ -166,6 +166,7 @@ app.get('/', function (req, res) {
    app.get('/profileAccount', function (req,res){
    res.render('profileAccount.hbs', {title:"Your Profile"})
    });
+   
       //Routing  button updatemail
       app.get('/changeMail', function (req, res) {
       res.render('changeMail.hbs', { title: "Update Your Email" });

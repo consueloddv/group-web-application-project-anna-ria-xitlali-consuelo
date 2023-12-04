@@ -78,11 +78,13 @@
 
                 <aside>
                     <h2>Log-in</h2>
-                    <form action="/submit" method="GET">
-                        <label>User Name </label> <input type="text" maxlength="30" id="first" name="Uname"><br>
-                        <br>
-                        <label>Password: </label> <input type="text" id="password" name="password" maxlength="30"><br>
-                        <br><br>
+                  <form action="/login" method="post">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" name="username" required>
+                            <br>    
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" required>
+                            <br>
                         <button onclick="submit" class="btn btn-success" id="submit">Login</button> <br>
                         <br>   
                         <button type= "button" onClick="createAccount()" class="btn btn-success">Create Account</button> 

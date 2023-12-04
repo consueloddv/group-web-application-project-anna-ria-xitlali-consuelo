@@ -57,14 +57,14 @@
 
                 <aside>
                     <h2>Create Account</h2>
-                      <form id="createAccountForm" action="/submit" method="POST"></form>
+                      <form id="createAccountForm" action="/create_User" method="POST">
                <!-- <form id="createAccountForm"> -->
                     <label>User Name: </label> <input type="text" maxlength="30" id="userName" name="userName"><br>
                     <label>First Name: </label> <input type="text" maxlength="30" id="firstName" name="firstName"><br>
                     <label>Last Name: </label> <input type="text" maxlength="30" id="lastName" name="lastName"><br>
                     <label>Email: </label> <input type="text" id="email" name="email" maxlength="30"><br>
                     <label>Password: </label> <input type="text" id="password" name="password" maxlength="30"><br>
-                    <button type= "button" onClick="accountCreated()" class="btn btn-success">Create Account</button> 
+                    <button type="submit" class="btn btn-success">Create Account</button> 
                 </form>
                        
                 </aside>
