@@ -142,20 +142,24 @@ let getAllUsers = (res) => {
 };
 
 // Query #4
+// Query #4
 // UPDATE operation
 // update user information - email
-let updateMail = (email, res) => {
-  const updateQuery = 'UPDATE user SET  email=? WHERE id=?';
-  db.run(updateQuery, [email], (err) => {
-      if (err) {
-        res.render('error', {
-            message: err.message
-        })
-      } else {
-          return('User updated successfully!');
-      }
-  });
-};
+let updateMail = (email, userName, res) => {
+    const updateQuery = 'UPDATE user SET  email=? WHERE userName=?';
+    db.run(updateQuery, [email, userName], (err) => {
+        if (err) {
+          res.render('error', {
+              message: err.message
+          })
+        } else {
+            res.render('updateM', {
+              userName: userName,
+              email: email
+            })
+        }
+    });
+  };
 
 // Query #5
 // DELETE operation

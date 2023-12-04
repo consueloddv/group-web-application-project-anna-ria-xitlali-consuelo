@@ -37,7 +37,9 @@
     </div>
     <div id="lower-side">
         <p id="message">
+           Hi {{this.userName}}
             Your Email has been successfully Updated. 
+            Your new email is: {{this.email}}
         </p>
     </div>
 </div>
@@ -46,7 +48,7 @@
                function updateM(){
                 //this function need to route to the url of the contact page
                 //window is a native function of JavaScript
-                window.location.href = "http://localhost:3000/deleteAccount"
+                window.location.href = "http://localhost:3000/updatet"
             }
             </script>
     </body>

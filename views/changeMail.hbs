@@ -55,17 +55,19 @@
             </header>
             <main id="flexcontainer">
 
-                <aside>
+               <aside>
                     
                     <br>
                     <br>
                     <br>
                     <h2>Update Email</h2>
                     <br>
-                      <form id="updateEmail" action="/submit" method="POST"></form>
-                    <label>New Email: </label> <input type="text" id="email" name="email" maxlength="30"><br>
-                    <br>
-                    <button type= "button" onClick="updateM()" class="btn btn-success">Update Email</button> 
+                      <form id="updateEmailForm" action="/update_email" method="POST">
+                      <label>Username: </label> <input type="text" id="userName" name="userName" maxlength="30"><br>
+                      <label>New Email: </label> <input type="text" id="email" name="email" maxlength="30"><br>
+                      <button onclick="submit" class="btn btn-success" id="submit">Update Email New</button> <br>
+                      </form>
+                    <br>                    
                 </form> <br>
                        
                 </aside>

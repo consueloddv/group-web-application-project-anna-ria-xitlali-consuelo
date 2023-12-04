@@ -85,6 +85,19 @@ app.get('/accountCreated', function (req, res) {
   res.render('accountCreated.hbs', { title: "Account Created Successfully! Welcome to BookHub!" });
 });
 
+// Route #7
+// Success message after new account creation
+app.get('/changeMail', function (req, res) {
+
+  res.render('changeMail', req.body)
+  // dbOperations
+});
+
+app.post('/update_email', function (req, res) {
+  dbOperations.updateMail(req.body.email, req.body.userName, res)
+  // dbOperations
+})
+
 
 app.get('/get_all_users', function (req, res) {
     // Call the function to get all users
