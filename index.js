@@ -1,11 +1,10 @@
 
 //express
-const express = require('express')
+const express = require('express');
 const dbOperations = require('./database.js');
 const axios = require('axios').default;
-
-const app = express()
-const port = 3000
+const app = express();
+const port = 3000;
 
 /**To serve static files such as images, CSS files, and JavaScript files, create a folders
 * and include the below statement.  The below statement assumes that I have a folder named assets
@@ -25,6 +24,7 @@ app.engine('html', require('hbs').__express);
 // Middleware is implemented to parse json data
 // parse application/json
 app.use(express.json());
+
 // For parsing application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
@@ -53,6 +53,20 @@ app.get('/books', async (req, res) => {
      res.status(500).send('Error retrieving books');
    }
 });
+/* IF THE ABOVE DOESNT WORK HERE IS ANOTHER OPTION
+ // Route to get all books
+ app.get('/all-books', async (req, res) => {
+  try {
+  const response = await axios.get('https://openlibrary.org/search.json?q=*&limit=10'); // Make an API call to Open Library
+  console.log(response.data); // To log the API response
+  const books = response.data.docs;
+  res.render('books', { books }); // Render the books template with the retrieved books
+} catch (error) {
+  console.error('Error fetching books:', error);
+  res.status(500).send('Error retrieving books');
+}
+});
+*/
  
 // Route #3
 // Renders data back to the client (User details - Username, Firstname, Lastname, Email) (3)
@@ -164,7 +178,7 @@ function getIdentifierType(identifier) {
 app.post('/review', async (req, res) => {
   try{
   const {bookId, rating, reviewText} = req.body;
-  if (!bookID || !rating || !reviewText) {
+  if (!bookId || !rating || !reviewText) {
     return res.status(400).json({error: 'Invalid input data'});
   }
   
@@ -184,8 +198,6 @@ app.post('/review', async (req, res) => {
 
 
 // listen port 
- app.listen(3000, () => {
-   console.log('BookHub started on port 3000');
+ app.listen(port, () => {
+   console.log('BookHub started on port', port);
  });
-
-
