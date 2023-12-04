@@ -124,6 +124,63 @@ app.get('/', function (req, res) {
 
 });
 
+//ADDITIONAL ROUTES THAT MAY BE USED LATER IN OUR APP
+
+// Route to get a specific book by ID (ISBNs, OCLC numbers, lccns & OLIDs) call the external API and return JSON
+app.get('/book/:id', async (req, res) => {
+  const bookId = req.params.id;
+ 
+try {
+  const identifierType = getIdentifierType(bookId);
+  const response = await axios.get(`http://openlibrary.org/api/volumes/brief/${identifierType}/${bookId}.json`); // Make an API call to Open Library
+  console.log(response.data); // To log the API response     
+  const bookInfo = response.data;
+
+if (!bookInfo || Object.keys(bookInfo).length === 0) {
+  return res.status(404).json({error: 'Book not found'});
+}
+
+res.json({bookInfo}); // Render the book template with the retrieved book
+} catch (error) {
+  console.error('Error fetching book:', error);
+  res.status(500).json({error: 'Internal Server Error'});
+  }
+});
+ 
+ // Function to determine the type of identifiers allowed
+function getIdentifierType(identifier) {
+  if (identifier.startsWith('ISBN:')) {
+  return 'isbn';
+  }else if (identifier.startsWith('oclc')){
+  return 'oclc';
+  }else if(identifier.startsWith('lccn')){
+  return 'lccn';
+  }else {
+  return 'olid';
+  }
+};
+
+ // Route to add a new book review
+app.post('/review', async (req, res) => {
+  try{
+  const {bookId, rating, reviewText} = req.body;
+  if (!bookID || !rating || !reviewText) {
+    return res.status(400).json({error: 'Invalid input data'});
+  }
+  
+  const result = await dbOperations.addReview(bookId, rating, reviewText);
+    
+  if (result.success) {
+    res.status(201).json({message: 'Review added successfully'});
+    console.log(`Book ID: ${bookId}, Rating: ${rating}, Review Text: ${reviewText}`);
+  }else{
+    res.status(500).json({error: 'Failed to add review to the database'});
+  }
+}catch (error) {
+  console.error('Error adding review;', error);
+  res.status(500).json({error: 'Internal Server Error'});
+}
+});
 
 
 // listen port 
