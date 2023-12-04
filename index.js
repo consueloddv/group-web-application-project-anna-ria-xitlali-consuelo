@@ -84,17 +84,20 @@ function welcomeUser(userName) {
 
 // Routes
 app.get('/', (req, res) => {
-   dbOperations.getAllUsers(res)
-   //res.render('index.hbs', { title: 'BookHub' });
+   //dbOperations.getAllUsers(res)
+   res.render('index.hbs', { title: 'BookHub' });
+   dbOperations.clearAllNulls();
  });
 
 //Route to submit info
 app.get('/submit', (req, res) => {
    // the statement below assigns the paramters passed from the from via the name attribute to the variable formInfo.  
-   var formInfo = req.query;
-   
+   const formInfo = req.query;
+   console.log('logged attempt ', formInfo)
    // the second argument passes data back to the 
-   res.render('user', {firstname: formInfo.firstName, lastname : formInfo.lastName})
+   dbOperations.logIn(formInfo.Uname, formInfo.password ,res);
+
+   //res.render('user', {firstname: formInfo.firstName, lastname : formInfo.lastName})
 })
 
 
@@ -166,7 +169,6 @@ app.get('/', function (req, res) {
    app.get('/profileAccount', function (req,res){
    res.render('profileAccount.hbs', {title:"Your Profile"})
    });
-   
       //Routing  button updatemail
       app.get('/changeMail', function (req, res) {
       res.render('changeMail.hbs', { title: "Update Your Email" });
@@ -181,6 +183,12 @@ app.get('/createAccount', function (req, res) {
    res.render('createAccount.hbs', { title: "Create Account" });
 });
 
+// update email
+
+app.post('/update_email', function (req, res) {
+   console.log('id email', req.userId)
+   res.render('changeMail.hbs', { title: "Update Email" });
+});
    //Routing to AccountCreated
 
    app.get('/accountCreated', function (req, res) {
@@ -189,7 +197,7 @@ app.get('/createAccount', function (req, res) {
 
    //create account button 
    app.post('/create_User', function (req, res) {
-   const {userName, password, firstName, lastName, email} = req.query;
+   const {userName, password, firstName, lastName, email} = req.body;
 
    dbOperations.createUser(userName, password, firstName, lastName, email);
    
@@ -210,9 +218,10 @@ app.get('/get_all_users', function (req, res) {
 
 app.post('/delete_user', function (req, res) {
  
-   const {userName, password, firstName, lastName, email, userId} = req.query;
+   const userId = req.body;
    // Calling the 'deleteAccount'
-   dbOperations.deleteAccount(userName, password, firstName, lastName, email, userId, res);
+   console.log('id' , userId.userId)
+  dbOperations.deleteAccount(userId.userId);
  });
 
  app.get('/deleteAccount', function (req, res) {
@@ -223,6 +232,5 @@ app.post('/delete_user', function (req, res) {
  app.listen(3000, () => {
    console.log('BookHub started on port 3000');
  });
-
 
 
