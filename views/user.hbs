@@ -82,44 +82,35 @@
                     <br>
                     <h3 class="centered">Welcome back {{this.userName}}</h3>
                     <br><br>
-            
-                    <p>User Name: <td>{{this.userName }}</td> </p>
-                    <p>First Name:<td>{{this.fisrtName}}</td></p>
+                    {{#each rows}}
+                      <form action="/update_email" method="POST"> 
+                    <p>ID: <td> {{this.userId }}</td> </p>
+                    <p>User Name: <td> {{this.userName }}</td> </p>
+                    <p>First Name:<td> {{this.firstName}}</td></p>
                     <p>Last Name: {{this.lastName}}</p>
-                    <p>Email:{{this.email}} </p>
-
+                    <p>Email: {{this.email}} </p>
                     <br>
+                    <button type="submit" name="id" value="{{this.userId}}"  class="btn btn-success">Update Email</button>
+                    <br>
+                     </form>
+                     <br>
+                     <form action="/delete_user" method="POST"> 
+                        <button name="userId" id="userId" type="submit" value="{{this.userId}}" class="btn btn-danger">Delete Account</button> 
+                    </form>
+                    <br>
+                    {{/each}}
                      
                     
-                    <button type="button" onclick="changeMail()" class="btn btn-success">Update Email</button> 
+                   
                      <br><br>
 
-                    <form action="/submit" method="GET"> 
-                        <button type= "button" onClick="deleteAccount()" class="btn btn-danger">Delete Account</button> 
-                    </form>
+                   
 
                        
                 </aside>
                 
             </main>
             </div>
-            <script>
-
-                 
-                function changeMail() {
-                    //this function need to route to the url of the contact page
-                //window is a native function of JavaScript
-                 window.location.href = "http://localhost:3000/changeMail";
-                 }
-            
-                function deleteAccount(){
-                //this function need to route to the url of the contact page
-                //window is a native function of JavaScript
-                window.location.href = "http://localhost:3000/deleteAccount"
-                 }
-        
-            </script>
-
     </body>
 </html>
                 
