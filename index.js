@@ -105,9 +105,11 @@ app.get('/get_all_users', function (req, res) {
 });
 
 app.post('/delete_user', function (req, res) {
-   const {userName, password, firstName, lastName, email, userId} = req.query;
+   const {userId} = req.body;
+  
+   console.log(req.body)
    // Calling the 'deleteAccount'
-   dbOperations.deleteAccount(userName, password, firstName, lastName, email, userId, res);
+   dbOperations.deleteAccount(userId, res);
 });
 
 app.get('/deleteAccount', function (req, res) {

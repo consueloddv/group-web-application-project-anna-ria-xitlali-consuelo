@@ -167,15 +167,15 @@ let updateMail = (email, userName, res) => {
 let deleteAccount = (userId, res) => {
   var deleteA ='DELETE FROM user WHERE userId = ?';
 
-  var params = [userId];
-
+  var params = [userId]; 
+ console.log(userId)
   db.run(deleteA, params, (err) => {
     if (err) {
         res.render('error', {
             message: err.message
         })
   } else {
-      return('Account deleted successfully!');
+      res.render('deleteAccount')
   }
  }); 
 };
