@@ -77,27 +77,17 @@
             <main id="flexcontainer">
 
                 <aside>
-                    <aside>
-                    <h1 class="centered">Your Profile</h1>
-                    <br>
-                    <h3 class="centered">Welcome back {{this.userName}}</h3>
-                    <br><br>
-            
-                    <p>User Name: {{this.userName}}</p>
-                    <p>First Name: {{this.firstName}}</p>
-                    <p>Last Name: {{this.lastName}}</p>
-                    <p>Email: {{this.email}}</p>
-
-                    <br>
-                     
-                    
-                    <button type="button" onclick="changeMail()" class="btn btn-success">Update Email</button> 
-                     <br><br>
-
-                    <form action="/submit" method="GET"> 
-                        <button type= "button" onClick="deleteAccount()" class="btn btn-danger">Delete Account</button> 
+                    <h2>Log-in</h2>
+                    <form action="/submit" method="GET">
+                        <label>User Name </label> <input type="text" maxlength="30" id="Uname" name="Uname"><br>
+                        <br>
+                        <label>Password: </label> <input type="text" id="password" name="password" maxlength="30"><br>
+                        <br><br>
+                       <input type="submit" class="btn btn-primary" value="submit">
+                        <br>   
+                       
                     </form>
-
+                    <button type= "button" onClick="createAccount()" class="btn btn-success">Create Account</button>
                        
                 </aside>
                 
@@ -105,25 +95,12 @@
             </div>
             <script>
 
-                 
-                function changeMail() {
-                    //this function need to route to the url of the contact page
-                //window is a native function of JavaScript
-                 window.location.href = "http://localhost:3000/changeMail";
-                 }
-            
-                function deleteAccount(){
+                  function createAccount(){
                 //this function need to route to the url of the contact page
                 //window is a native function of JavaScript
-                window.location.href = "http://localhost:3000/deleteAccount"
-                 }
+                window.location.href = "http://localhost:3000/createAccount"
+            }
         
             </script>
-
-    </body>
-</html>
-                
-            </main>
-            </div>
     </body>
 </html>
