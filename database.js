@@ -98,8 +98,31 @@ let getUserByUserName = (username, password, res) => {
         else {
             res.render('user',(user));
         }
+       
     });
 };
+
+let logIn = (username, password, res) => {
+    
+    var params = [username, password]
+    var getAll = 'SELECT firstName, lastName, email, userId, userName, password FROM user WHERE userName = ? AND password = ?';
+    
+    db.all(getAll, params, function (err, rows) {
+        if (!rows || (rows.length == 0)) {
+            // user not found or password error
+            console.log('Check your username and password')
+        } else if (err) {
+            // error callback
+            throw err;
+        } else {
+            //success logged in
+            console.log("logged in user: ", rows)
+            res.render('user.hbs', {rows})
+        }
+
+        
+    });
+  };
 
 // Query #3
 // RETRIEVE operation
@@ -138,7 +161,7 @@ let updateMail = (email, res) => {
 // DELETE operation
 // delete a user entry
 let deleteAccount = (userId, res) => {
-  var deleteA ='DELETE FROM user WHERE userId=?';
+  var deleteA ='DELETE FROM user WHERE userId = ?';
 
   var params = [userId];
 
@@ -152,6 +175,21 @@ let deleteAccount = (userId, res) => {
   }
  }); 
 };
+
+//clear all nulls
+let clearAllNulls = (res) => {
+    var deleteAllNull ='DELETE FROM user WHERE userId is null';
+  
+  
+    db.run(deleteAllNull, (err) => {
+      if (err) {
+        console.error(err.message);
+        return('Error deleting all nulls.');
+    } else {
+        return('all nulls deleted successfully!');
+    }
+   }); 
+  };
 
 function generateUUID() { // Public Domain/MIT
     var d = new Date().getTime();//Timestamp
@@ -169,5 +207,10 @@ function generateUUID() { // Public Domain/MIT
     });
 }
 
-module.exports = { getAllUsers, createUser, updateMail, deleteAccount, getUserByUserName};
+let showUser = (res) => {
+    res.render('user.hbs', {res})
+}
+
+
+module.exports = { getAllUsers, createUser, updateMail, deleteAccount, getUserByUserName, showUser, logIn,clearAllNulls};
 

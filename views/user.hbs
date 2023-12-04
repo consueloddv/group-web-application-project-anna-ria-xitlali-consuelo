@@ -77,12 +77,46 @@
             <main id="flexcontainer">
 
                 <aside>
-                    <h2>Welcome, {{this.firstName}} {{this.lastName}} to BookHub!</h2>         
+                    <aside>
+                    <h1 class="centered">Your Profile</h1>
+                    <br>
+                    <h3 class="centered">Welcome back {{this.userName}}</h3>
+                    <br><br>
+                    {{#each rows}}
+                      <form action="/update_email" method="POST"> 
+                    <p>ID: <td> {{this.userId }}</td> </p>
+                    <p>User Name: <td> {{this.userName }}</td> </p>
+                    <p>First Name:<td> {{this.firstName}}</td></p>
+                    <p>Last Name: {{this.lastName}}</p>
+                    <p>Email: {{this.email}} </p>
+                    <br>
+                    <button type="submit" name="id" value="{{this.userId}}"  class="btn btn-success">Update Email</button>
+                    <br>
+                     </form>
+                     <br>
+                     <form action="/delete_user" method="POST"> 
+                        <button name="userId" id="userId" type="submit" value="{{this.userId}}" class="btn btn-danger">Delete Account</button> 
+                    </form>
+                    <br>
+                    {{/each}}
+                     
+                    
+                   
+                     <br><br>
+
+                   
+
+                       
                 </aside>
                 <p>
                     <a href="/books">Click Here</a>
                     to access our book database.
                 </p>
+            </main>
+            </div>
+    </body>
+</html>
+                
             </main>
             </div>
     </body>
