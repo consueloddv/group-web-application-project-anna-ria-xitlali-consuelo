@@ -1,6 +1,9 @@
 
 //express
 const express = require('express');
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const session = require('express-session');
 const dbOperations = require('./database.js');
 const axios = require('axios').default;
 const app = express();
@@ -28,6 +31,27 @@ app.use(express.json());
 // For parsing application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
+// Middleware for session management
+app.use(session({ secret: 'your-secret-key', resave: false, saveUninitialized: false }));
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Passport local strategy for authentication
+passport.use(new LocalStrategy(
+  (username, password, done) => {
+    // Implement your authentication logic here
+    dbOperations.getUserByUserName(username, password, done);
+  }
+));
+
+passport.serializeUser((user, done) => {
+  done(null, user.id);
+});
+
+passport.deserializeUser((id, done) => {
+  // Implement your logic to retrieve a user from the database based on the id
+  dbOperations.getUserById(id, done);
+});
 
 // Application has minimum 5 routes implemented
 
@@ -117,6 +141,13 @@ app.get('/get_all_users', function (req, res) {
     // Call the function to get all users
     dbOperations.getAllUsers(res);
 });
+
+//Route to Logout
+app.get('/logout', (req, res) => {
+  req.logout();
+  res.redirect('/');
+});
+
 
 app.post('/delete_user', function (req, res) {
    const {userId} = req.body;

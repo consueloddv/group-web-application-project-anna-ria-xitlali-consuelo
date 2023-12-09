@@ -113,21 +113,17 @@ git status
     </div>
     <div id="lower-side">
         <p id="message">
-            Congratulations, your account has been successfully created.<br>
-            <button type= "button" onClick="profileAccount()" class="btn btn-success">Click to access your Profile.</button> 
+            You're now logged out.<br>
+            <button type= "button" onClick="profileAccount()" class="btn btn-success">Return to home page.</button> 
         </p>
     </div>
 </div>
             <script>
 
-                  function accountCreated(){
+            function logout(){
                 //this function need to route to the url of the contact page
                 //window is a native function of JavaScript
-                window.location.href = "http://localhost:3000/accountCreated"
+                window.location.href = "http://localhost:3000"
             }
-            function profileAccount(){
-                //this function need to route to the url of the contact page
-                //window is a native function of JavaScript
-                window.location.href = "http://localhost:3000/profileAccount"
             </script>
     </body>
