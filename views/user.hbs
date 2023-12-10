@@ -83,20 +83,20 @@
                     <h3 class="centered">Welcome back {{this.userName}}</h3>
                     <br><br>
                     
-                      <form action="/update_email" method="POST"> 
-                    <p>ID: <td> {{this.userId }}</td> </p>
-                    <p>User Name: <td> {{this.userName }}</td> </p>
-                    <p>First Name:<td> {{this.firstName}}</td></p>
-                    <p>Last Name: {{this.lastName}}</p>
-                    <p>Email: {{this.email}} </p>
+                    <form action="/changeMail" method="GET"> 
+                        <p>ID: <td> {{this.userId }}</td> </p>
+                        <p>User Name: <td> {{this.userName }}</td> </p>
+                        <p>First Name:<td> {{this.firstName}}</td></p>
+                        <p>Last Name: {{this.lastName}}</p>
+                        <p>Email: {{this.email}} </p>
+                        <br>
+                        <button type= "submit" class="btn btn-success">Update Email</button> 
+                    </form>
                     <br>
-                    <button class="btn btn-success" id="submit">
-                        <a href="/changeMail">
-                            Update Email
-                        </a>
-                    </button> <br>
-                     </form>
-                     <br>
+                    <form action="/logout" method="POST"> 
+                        <button type= "submit" class="btn btn-success">Log Out</button> 
+                    </form>
+                    <br>
                      <form action="/delete_user" method="POST"> 
                         <button name="userId" id="userId" type="submit" value="{{this.userId}}" class="btn btn-danger">Delete Account</button> 
                     </form>

@@ -58,15 +58,17 @@ passport.deserializeUser(function(user, done) {
 
 // Application has minimum 5 routes implemented
 
-app.get('/login',
-  function(req, res, next) {
-    res.render('login.hbs');
+app.post('/login/password',
+  passport.authenticate('local', { failureRedirect: '/', failureMessage: true }),
+  function(req, res) {
+    dbOperations.getUserByUserName(req.body.username, req.body.password, res)
   });
 
-app.post('/login/password',
-  passport.authenticate('local', { failureRedirect: '/login', failureMessage: true }),
-  function(req, res) {
-    res.redirect('/accountCreated');
+  app.post('/logout', function(req, res, next){
+    req.logout(function(err) {
+      if (err) { return next(err); }
+      res.redirect('/');
+    });
   });
 
 // Route #1
