@@ -66,7 +66,7 @@ app.get('/login',
 app.post('/login/password',
   passport.authenticate('local', { failureRedirect: '/login', failureMessage: true }),
   function(req, res) {
-    res.redirect('/books');
+    res.redirect('/accountCreated');
   });
 
 // Route #1
