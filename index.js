@@ -162,7 +162,6 @@ app.get('/logOut', (req, res) => {
 app.post('/delete_user', function (req, res) {
    const {userId} = req.body;
   
-   console.log(req.body)
    // Calling the 'deleteAccount'
    dbOperations.deleteAccount(userId, res);
 });

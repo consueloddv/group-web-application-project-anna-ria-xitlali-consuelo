@@ -170,7 +170,6 @@ let deleteAccount = (userId, res) => {
   var deleteA ='DELETE FROM user WHERE userId = ?';
 
   var params = [userId]; 
- console.log(userId)
   db.run(deleteA, params, (err) => {
     if (err) {
         res.render('error', {
