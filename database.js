@@ -17,6 +17,8 @@ let db = new sqlite3.Database('./users.db', sqlite3.OPEN_READWRITE, (err) => {
     }
 });
 
+
+
 // data base routes
 
 // Query #1
@@ -216,5 +218,5 @@ let showUser = (res) => {
 }
 
 
-module.exports = { getAllUsers, createUser, updateMail, deleteAccount, getUserByUserName, showUser, logIn,clearAllNulls};
+module.exports = { getAllUsers, createUser, updateMail, deleteAccount, getUserByUserName, showUser, logIn, clearAllNulls, db};
 

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BookHub</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+
+         <div id="container">
+            <header>
+            
+            </header>
+            <main id="flexcontainer">
+
+                <aside>
+                    <h2>Log-in</h2>
+                    <form action="/login/password" method="post">
+                        <div>
+                            <label for="username">Username</label>
+                            <input id="username" name="username" type="text" autocomplete="username" required />
+                        </div>
+                        <div>
+                            <label for="current-password">Password</label>
+                            <input id="current-password" name="password" type="password" autocomplete="current-password" required />
+                        </div>
+                        <div>
+                            <button type="submit">Sign in</button>
+                        </div>
+                    </form>                       
+                </aside>
+                
+            </main>
+            </div>
+            <script>
+
+                  function createAccount(){
+                //this function need to route to the url of the contact page
+                //window is a native function of JavaScript
+                window.location.href = "http://localhost:3000/createAccount"
+            }
+        
+            </script>
+    </body>
+</html>

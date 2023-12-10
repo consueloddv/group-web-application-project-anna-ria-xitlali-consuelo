@@ -1,10 +1,10 @@
 
 //express
 const express = require('express');
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 const dbOperations = require('./database.js');
+const passport = require('passport');
+const LocalStrategy = require('passport-local');
 const axios = require('axios').default;
 const app = express();
 const port = 3000;
@@ -17,7 +17,7 @@ const port = 3000;
 // Middlewares
 
 // Middleware is implemented for static files
-app.use(express.static('assets'))
+app.use(express.static(__dirname + '/public'));
 
 // Middleware is implemented for viewing template engine
 app.set("view engine", "hbs");
@@ -36,24 +36,38 @@ app.use(session({ secret: 'your-secret-key', resave: false, saveUninitialized: f
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Passport local strategy for authentication
-passport.use(new LocalStrategy(
-  (username, password, done) => {
-    // Implement your authentication logic here
-    dbOperations.getUserByUserName(username, password, done);
-  }
-));
+passport.use(new LocalStrategy(function verify(username, password, cb) {
+  
+  dbOperations.db.get('SELECT * FROM user WHERE userName = ?', [ username ], function(err, user) {
+    if (err) { return cb(err); }
+    if (!user) { return cb(null, false, { message: 'Incorrect username or password.' }); }
+    if (password != user.password) {
+      return cb(null, false, { message: 'Incorrect username or password.' });
+    }
+    return cb(null, user);
+  });
+}));
 
-passport.serializeUser((user, done) => {
-  done(null, user.id);
+passport.serializeUser(function(user, done) {
+  done(null, user);
 });
 
-passport.deserializeUser((id, done) => {
-  // Implement your logic to retrieve a user from the database based on the id
-  dbOperations.getUserById(id, done);
+passport.deserializeUser(function(user, done) {
+  done(null, user);
 });
 
 // Application has minimum 5 routes implemented
+
+app.get('/login',
+  function(req, res, next) {
+    res.render('login.hbs');
+  });
+
+app.post('/login/password',
+  passport.authenticate('local', { failureRedirect: '/login', failureMessage: true }),
+  function(req, res) {
+    res.redirect('/books');
+  });
 
 // Route #1
 // Renders data back to the client (Welcome Firstname, Lastname) (1)
@@ -77,20 +91,6 @@ app.get('/books', async (req, res) => {
      res.status(500).send('Error retrieving books');
    }
 });
-/* IF THE ABOVE DOESNT WORK HERE IS ANOTHER OPTION
- // Route to get all books
- app.get('/all-books', async (req, res) => {
-  try {
-  const response = await axios.get('https://openlibrary.org/search.json?q=*&limit=10'); // Make an API call to Open Library
-  console.log(response.data); // To log the API response
-  const books = response.data.docs;
-  res.render('books', { books }); // Render the books template with the retrieved books
-} catch (error) {
-  console.error('Error fetching books:', error);
-  res.status(500).send('Error retrieving books');
-}
-});
-*/
  
 // Route #3
 // Renders data back to the client (User details - Username, Firstname, Lastname, Email) (3)
@@ -143,9 +143,17 @@ app.get('/get_all_users', function (req, res) {
 });
 
 //Route to Logout
-app.get('/logout', (req, res) => {
-  req.logout();
-  res.redirect('/');
+app.get('/logOut', (req, res) => {
+  req.logout(err => {
+    if (err) {
+      // Handle error if logout fails
+      console.error('Error during logout:', err);
+      return res.status(500).send('Internal Server Error');
+    }
+
+    // Redirect to the home page after successful logout
+    res.redirect('/');
+  });
 });
 
 
