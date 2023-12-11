@@ -94,20 +94,15 @@ app.get('/books', async (req, res) => {
    }
 });
  
-// Route #3
-// Renders data back to the client (User details - Username, Firstname, Lastname, Email) (3)
-// routing to profile 
-app.get('/profileAccount', function (req,res){
-  res.render('profileAccount.hbs', {title:"Your Profile"})
-});
 
-// Route #4
+
+// Route #3
 // Routing button updatemail
 app.get('/changeMail', function (req, res) {
   res.render('changeMail.hbs', { title: "Update Your Email" });
 });
 
-// Route #5
+// Route #4
 // Form to create new account
 app.get('/createAccount', function (req, res) {
    res.render('createAccount.hbs', { title: "Create Account" });
