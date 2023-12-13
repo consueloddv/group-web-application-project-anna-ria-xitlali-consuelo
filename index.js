@@ -7,7 +7,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const axios = require('axios').default;
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000
 
 /**To serve static files such as images, CSS files, and JavaScript files, create a folders
 * and include the below statement.  The below statement assumes that I have a folder named assets
