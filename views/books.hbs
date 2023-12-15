@@ -7,8 +7,45 @@
   <title>BookHub - Books</title>
   <link rel="stylesheet" href="style.css">
   <style>
-        body {
-    background: #6abadeba;
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: url('/img/books.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+
+}
+h1{
+    color: #000000;
+    font-size: 55px;
+    text-align: center;
+    position: relative;
+    margin-top: 60px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    background-color: rgb(253, 201, 87);
+}
+ #container {
+    width: 80%; /* Adjust as needed */
+    margin: auto;
+    background: rgb(253, 201, 87);
+    color: black;
+    position: relative;
+    box-sizing: border-box;
+    padding: 20px;
+    margin-top: 20px; /* Adjust as needed */
+}
+
+.outer {
+    margin-bottom: 1cm;
+}
+
+a {
+    color: white; /* Change to your preferred color */
+  
 }
 #card {
     position: relative;
@@ -57,11 +94,16 @@
 .inner {
   padding-left: 30px;
 }
+
+
 </style>
 </head>
 <body>
+  <header>
   <h1>BookHub - Books</h1>
-
+  
+   
+<div id="container">
     {{#each books}}
     <div class="outer bottom-two">
         <h2>{{title}}</h2>
@@ -81,6 +123,7 @@
         {{/each}}
         </div>
     </div>
+    
         
       <p class="bottom-two"></p>
     {{/each}}
