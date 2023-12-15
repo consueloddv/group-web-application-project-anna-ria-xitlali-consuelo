@@ -8,6 +8,21 @@ h1{
     transform: translate(-50%, -50%);
     font-weight: bold;
 }
+#prueba
+header {
+    text-align: center;
+}
+h3{
+     color: #f4f1ee;
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+    margin-top: 30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+
+}
 body {
     margin: 0;
     padding: 0;

@@ -34,9 +34,15 @@
             />
         </svg>
         <style>
-        body {
-    background: #1488EA;
-}
+      body {
+    
+                margin: 0;
+                padding: 0;
+                background: url('/img/books.jpg');
+                background-size: cover;
+                background-position: center;
+                font-family: sans-serif;
+            }
 #card {
     position: relative;
     top: 110px;
@@ -117,6 +123,7 @@
             Your new email is: {{this.email}}
         </p>
     </div>
+     <button type= "button" onClick="homepage()" class="btn btn-success">Click to access your Profile.</button> 
 </div>
             <script>
 
@@ -124,6 +131,12 @@
                 //this function need to route to the url of the contact page
                 //window is a native function of JavaScript
                 window.location.href = "/update"
+            }
+
+            function homepage(){
+                //this function need to route to the url of the contact page
+                //window is a native function of JavaScript
+                window.location.href = "/"
             }
             </script>
     </body>
