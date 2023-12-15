@@ -1,6 +1,62 @@
-body {
-    background: #1488EA;
+h1{
+    color: #FFDB58;
+    font-size: 55px;
+    text-align: center;
+    position: relative;
+    margin-top: 30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
 }
+body {
+    margin: 0;
+    padding: 0;
+    background: url('/img/books.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+
+}
+#container{
+    width: auto;
+    margin: auto;
+    background: white;
+    color: black;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    box-sizing: border-box;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+}
+
+.loginuser input{
+    width: auto;
+    margin-bottom: 20px;
+}
+
+.loginpass input{
+    width: auto;
+    margin-bottom: 20px; 
+}
+
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+    td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    }
+
+    tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
 #card {
     position: relative;
     top: 110px;
