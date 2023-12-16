@@ -1,6 +1,10 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=12688241&assignment_repo_type=AssignmentRepo)
 # CPST 342 Group Project Repository 
+- **Heroku URL:**
+    https://bookshub-3f11667db16c.herokuapp.com/
 
+  <br>
+#Description
 You will complete three assignments that will culminate in developing a monolithic full-stack web application. 
 
 For the first group assignment, you will propose what type of app you will build and use the README.md file to document your responses to the questions for Assignment 1 deliverable 1.  All documentation pertaining to your project should occur in the README.md. 
@@ -28,7 +32,7 @@ For this deliverable, you will need to modify the readme file and add responses 
 
 - **Name of the application:**
     BookHub
-
+  
 - **Description of application:**<br>
 This Website is devoted to passionate book enthusiasts seeking a particular literary gem, eager to engage in a book club or immerse themselves in fandoms. Each user will possess an account empowering them to search for books, share insightful comments, provide reviews, and, most importantly, become part of vibrant book clubs or fandoms. By fostering a community centered around books, this platform aims to transcend the solitary nature of reading, transforming it into a shared and communal experience. Additionally, users can effortlessly track and share their reading progress, further enhancing the community's collaborative spirit.
 
@@ -154,7 +158,7 @@ Heroku - [https://www.heroku.com](https://www.heroku.com/) 
 Only one member of your team will need to create an account. 
 Heroku will need to be configured to host your site from the GitHub repository issued by the instructor. 
 
-Update the repository Readme file to include the URL from Heroku
+The URL from Heroku: https://bookshub-3f11667db16c.herokuapp.com/
 
 
 ### Extra Credit – Implementing Authentication + Authorization using Passport.js or AuthO (7 Extra Credit Points)
