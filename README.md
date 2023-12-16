@@ -4,7 +4,7 @@
     https://bookshub-3f11667db16c.herokuapp.com/
 
   <br>
-#Description
+Description
 You will complete three assignments that will culminate in developing a monolithic full-stack web application. 
 
 For the first group assignment, you will propose what type of app you will build and use the README.md file to document your responses to the questions for Assignment 1 deliverable 1.  All documentation pertaining to your project should occur in the README.md. 
